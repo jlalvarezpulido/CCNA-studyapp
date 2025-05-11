@@ -1,0 +1,97 @@
+[
+    {
+        "question": "what are different types of Cisco OS's",
+        "answer": "NX-OS IOS-XR IOS-XE",
+        "notes": "NX-OS is the Cisco nexus data center IOS-XR runs on service provider routers IOS-XE runs on the ASR1000 of service provider routers"
+    },
+    {
+        "question": "Command line interface for SECURELY connecting to the devices management IP address over the network",
+        "answer": "SSH",
+        "notes": "SSH is a secure way to connect to the command line interface over the network"
+    },
+    {
+        "question": "UNSECURE way to connect to a network devices command line interface",
+        "answer": "TELNET",
+        "notes": "Telnet is supported but not reccomended"
+    },
+    {
+        "question": "What is the name of the server that enforces secure logins through this centralized server",
+        "answer": "AAA SERVER",
+        "notes": "Enterprises will user (AAA) Authentication, Authorization, and Accounting server for secure login to network devices."
+    },
+    {
+        "question": "Name of popular client used to connect to network devices",
+        "answer": "PUTTY",
+        "notes": "PuTTY is a client used to connect to network devices over serial, Telnet, and SSH"
+    },
+    {
+        "question": "Network device management question, What is the name for the network that all traffic goes through from a network engineer point of view",
+        "answer": "PRODUCTION NETWORK",
+        "notes": "The production network is the network path that non network devices use, network management could also use this type of network engineers may also use a completely different network for managing Network Devices"
+    },
+    {
+        "question": "Network device management question, What is the name for the network that is used just for managing network devices",
+        "answer": "MANAGEMENT NETWORK",
+        "notes": "The reason for separating the networks allows for a path to to the network devices if the Production network were to be down."
+    },
+    {
+        "question": "Network management question: ___ management uses the Production network",
+        "answer": "IN BAND",
+        "notes": "in band management uses the production network, the band represents all traffic"
+    },
+    {
+        "question": "Network management question: ___ management uses the management network",
+        "answer": "OUT OF BAND",
+        "notes": "Out of band management uses the dedicated management network to manage the network devices"
+    },
+    {
+        "question": "What connection method is used when setting up a new device without an IP address configured to it yet",
+        "answer": "CONSOLE CABLE",
+        "notes": "The console cable (typically DB9 to RJ45) is used for the initial configuration"
+    },
+    {
+        "question": "New console cable connects USB to __-USB",
+        "answer": "MINI",
+        "notes": "The newer console cables dont use the DB9 as computers and laptops no longer have the physical port to connect to it. The USB portion is more compatible with newer PCs and the Mini USB is also compatible with newer network devices (USB C is newer ever still)"
+    },
+    {
+        "question": "When using Windows under Device Manager, what is the name of the port for the serial connection",
+        "answer": "COM",
+        "notes": "The COM port is used for the serical connections and used in PuTTY to connect the COM port # to the network device"
+    },
+    {
+        "question": "Serial connection question, Speed",
+        "answer": "9600",
+        "notes": "The default speed of 9600 work for connecting using the serial connection in the network device console port"
+    },
+    {
+        "question": "Serial connection question, how many data bits ",
+        "answer": "8",
+        "notes": "The default data bits are 8 for connecting using the serial connection in the network device console port"
+    },
+    {
+        "question": "Serial connection question, how many stop bits ",
+        "answer": "1",
+        "notes": "The default stop bits are 1 for connecting using the serial connection in the network device console port"
+    },
+    {
+        "question": "Serial connection question, What is the parity set to ",
+        "answer": "NONE",
+        "notes": "The default Parity is set to None as default for connecting using the serial connection in the network device console port"
+    },
+    {
+        "question": "Serial connection question, What is the Flow control set to ",
+        "answer": "NONE",
+        "notes": "The default Flow control is set to None as default for connecting using the serial connection in the network device console port"
+    },
+    {
+        "question": "Console connection Troubleshooting: when connecting to a network device if connectin to the __ ____ does not work use the console cable",
+        "answer": "IP ADDRESS",
+        "notes": "If connecting using the IP address does not work try the console cable as a trouble shooting step"
+    },
+    {
+        "question": "Why would a network device not acquire an IP address",
+        "answer": "NOT BOOTING UP",
+        "notes": "If the network device fails to start up then there will be no IP address to connect to, using the console connection you can view the boot up process and the error messages when it fails to boot up."
+    }
+]
