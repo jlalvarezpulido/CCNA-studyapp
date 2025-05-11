@@ -18,4 +18,8 @@
 "Serial connection question, What is the Flow control set to ","NONE","The default Flow control is set to None as default for connecting using the serial connection in the network device console port"
 "Console connection Troubleshooting: when connecting to a network device if connectin to the __ ____ does not work use the console cable","IP ADDRESS","If connecting using the IP address does not work try the console cable as a trouble shooting step"
 "Why would a network device not acquire an IP address","NOT BOOTING UP","If the network device fails to start up then there will be no IP address to connect to, using the console connection you can view the boot up process and the error messages when it fails to boot up."
-
+"what is the IOS command used to view all the commands that are available in the command hierarchy","?","The question mark (?) is used to list all the available commands in the command lines current command hierarchy"
+"What is the level 1 in the command line hierarchy. __ exec mode","USER","USER exec mode is the first level when logging into the Cisco IOS"
+"What commands takes you from User Exec to Privilege exec mode","ENABLE","The enable keyword goes up a level in the command line hierarchy"
+"What is the level 2 in the command line hierarchy. __ exec mode","PRIVILEGE","Privilege exec mode is the level 2 command line hierarchy in Cisco IOS"
+"What command takes you from Privilege mode into User mode","DISABLE","the Disable command allows you to exit privilege exec mode"
