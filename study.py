@@ -14,11 +14,15 @@ def challenge():
     ques = data[random_number]["question"] + "\n" + "#"
     res = input(ques).upper()
     if res == data[random_number]["answer"]:
+        data[random_number]["mastery"] += 1
         print("correct")
         print(data[random_number]["notes"])
+        print(f'mastery++ :{data[random_number]["mastery"]}')
         print("\n")
     else:
+        data[random_number]["mastery"] -= 1
         print("incorrect")
+        print(f'mastery-- :{data[random_number]["mastery"]}\n')
         print("answer ", data[random_number]["answer"])
         print(data[random_number]["notes"])
         print("\n")
