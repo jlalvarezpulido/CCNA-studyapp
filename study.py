@@ -1,6 +1,15 @@
 import random
 import json
 import os
+import textwrap
+
+class Colors:
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BLUE = '\033[94m'
+    BRIGHT_CYAN = '\033[96m'
+    RESET = '\033[0m'
 
 json_path = "jsonfiles/section1.json"
 with open(json_path, "r") as f:
@@ -56,15 +65,14 @@ def challenge():
         print("ERROR: no questions loaded from JSON file")
     random_number = (random.randint(0, (len(data) - 1) * 1000)) % len(data)
 
-    ques = f'{data[random_number]["question"]}\n#'
-    res = input(ques).upper()
-
+    ques = f'{data[random_number]["question"]}\n'
+    wrapped_ques = textwrap.fill(ques, width=70, break_long_words=False, break_on_hyphens=False)
+    res = input(wrapped_ques + f"{Colors.BRIGHT_CYAN}\n#").upper()
     if res == str(data[random_number]["answer"]):
         data[random_number]["mastery"] += 1
-        print("correct")
-        print(data[random_number]["notes"])
-        print(f'mastery++ :{data[random_number]["mastery"]}\n')
-
+        print(f"{Colors.GREEN}correct{Colors.RESET}")
+        print(textwrap.fill(data[random_number]["notes"], width=70, break_long_words=False, break_on_hyphens=False))
+        print(f'{Colors.BLUE}mastery++ :{data[random_number]["mastery"]}\n{Colors.RESET}')
         if data[random_number]["mastery"] < 0:
             low_mastery.append(data[random_number])
             del data[random_number]
@@ -78,10 +86,10 @@ def challenge():
             del data[random_number]
     else:
         data[random_number]["mastery"] -= 1
-        print("incorrect")
-        print(f'mastery-- :{data[random_number]["mastery"]}\n')
+        print(f"{Colors.RED}incorrect\n{Colors.RESET}")
+        print(f'{Colors.YELLOW}mastery-- :{data[random_number]["mastery"]}\n{Colors.RESET}')
         print("answer ", data[random_number]["answer"])
-        print(data[random_number]["notes"])
+        print(textwrap.fill(data[random_number]["notes"], width=70, break_long_words=False, break_on_hyphens=False))
 
         if data[random_number]["mastery"] < 0:
             low_mastery.append(data[random_number])
@@ -101,19 +109,13 @@ loop_count = 0
 while loop:
 
     if loop_count < 1:
-        print("for more info type help")
-        print("welcome to the study TTY app, please enter your command:")
+        print(f"{Colors.BLUE}Welcome to the study TTY app, Take on callenges and level up your mastery\nplease enter your command:{Colors.RESET}")
 
     status = input("for help type help\n#")
     match status:
 
         case "help":
-            print("commands below:")
-            print("chal - take on a challenge (port question)")
-            print("save - exit app saving mastery data")
-            print("exit - exit app without saving")
-            print("reset - reset all masteries and exit")
-            print("clear - clear screen")
+            print(f"{Colors.BLUE}commands below:\nchal - take on a challenge (review question\nsave - exit app saving mastery data\nexit - exit app without saving\nreset - reset all masteries and exit\nclear - clear screen{Colors.RESET}")
 
         case "chal":
             challenge()
@@ -134,7 +136,7 @@ while loop:
             loop = False
 
         case "reset":
-            reset_auth = input("Are you sure you would like to delete progress\n(y - for yes)#")
+            reset_auth = input(f"{Colors.YELLOW}Are you sure you would like to delete progress\n(y - for yes)#{Colors.RESET}")
             if reset_auth.upper() == "Y":
                 reset()
                 loop = False
@@ -144,6 +146,6 @@ while loop:
             loop = False
 
         case _:
-            print("Unknown command")
+            print(f"{Colors.RED}Unknown command{Colors.RESET}")
 
     loop_count += 1
