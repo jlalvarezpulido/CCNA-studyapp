@@ -34,7 +34,7 @@ def challenge():
         if normal_mastery:
             data = normal_mastery
         elif low_mastery:
-            data = low_mastery:
+            data = low_mastery
         elif high_mastery:
             data = high_mastery
         else:
