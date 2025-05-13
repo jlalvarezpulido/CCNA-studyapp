@@ -13,7 +13,7 @@ def challenge():
     random_number = random.randint(0, len(data) - 1)
     ques = data[random_number]["question"] + "\n" + "#"
     res = input(ques).upper()
-    if res == data[random_number]["answer"]:
+    if res == str(data[random_number]["answer"]):
         data[random_number]["mastery"] += 1
         print("correct")
         print(data[random_number]["notes"])
