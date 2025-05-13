@@ -20,26 +20,24 @@ for entry in json_data:
 def challenge():
 
     random_mastery = random.randint(1,10)
-    if random_mastery < 4:
-        if low_mastery:
-            data = low_mastery
-        else:
-            data = normal_mastery
-    elif random_mastery < 7:
-        if high_mastery:
-            data = high_mastery
-        else:
-            data = normal_mastery
-    else:
-        if normal_mastery:
-            data = normal_mastery
-        elif low_mastery:
-            data = low_mastery
-        elif high_mastery:
-            data = high_mastery
-        else:
-            print("ERROR: no questions loaded from JSON file")
+    # Mapping priority order based on random_mastery value
+    mastery_options = [
+            # random_mastery < 4
+            [low_mastery, normal_mastery, high_mastery],  
+            # random_mastery < 7
+            [high_mastery, normal_mastery, low_mastery],  
+            # random_mastery >= 7
+            [normal_mastery, low_mastery, high_mastery]   
+    ]
 
+    # Determine which priority order to use
+    index = 0 if random_mastery < 4 else 1 if random_mastery < 7 else 2
+
+    # Select the first non-empty list
+    data = next((lst for lst in mastery_options[index] if lst), None)
+
+    if data is None:
+        print("ERROR: no questions loaded from JSON file")
     random_number = random.randint(0, len(data) - 1)
 
     ques = f'{data[random_number]["question"]}\n#'
