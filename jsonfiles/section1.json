@@ -1,44 +1,8 @@
 [
     {
-        "question": "what are different types of Cisco OS's",
-        "answer": "NX-OS IOS-XR IOS-XE",
-        "notes": "NX-OS is the Cisco nexus data center IOS-XR runs on service provider routers IOS-XE runs on the ASR1000 of service provider routers",
-        "mastery": 0
-    },
-    {
-        "question": "Command line interface for SECURELY connecting to the devices management IP address over the network",
-        "answer": "SSH",
-        "notes": "SSH is a secure way to connect to the command line interface over the network",
-        "mastery": 0
-    },
-    {
-        "question": "UNSECURE way to connect to a network devices command line interface",
-        "answer": "TELNET",
-        "notes": "Telnet is supported but not reccomended",
-        "mastery": 0
-    },
-    {
-        "question": "What is the name of the server that enforces secure logins through this centralized server",
-        "answer": "AAA SERVER",
-        "notes": "Enterprises will user (AAA) Authentication, Authorization, and Accounting server for secure login to network devices.",
-        "mastery": 0
-    },
-    {
-        "question": "Name of popular client used to connect to network devices",
-        "answer": "PUTTY",
-        "notes": "PuTTY is a client used to connect to network devices over serial, Telnet, and SSH",
-        "mastery": 0
-    },
-    {
         "question": "Network device management question, What is the name for the network that all traffic goes through from a network engineer point of view",
         "answer": "PRODUCTION NETWORK",
         "notes": "The production network is the network path that non network devices use, network management could also use this type of network engineers may also use a completely different network for managing Network Devices",
-        "mastery": 0
-    },
-    {
-        "question": "Network device management question, What is the name for the network that is used just for managing network devices",
-        "answer": "MANAGEMENT NETWORK",
-        "notes": "The reason for separating the networks allows for a path to to the network devices if the Production network were to be down.",
         "mastery": 0
     },
     {
@@ -48,9 +12,9 @@
         "mastery": 0
     },
     {
-        "question": "Network management question: ___ management uses the management network",
-        "answer": "OUT OF BAND",
-        "notes": "Out of band management uses the dedicated management network to manage the network devices",
+        "question": "(mode question) Router>",
+        "answer": "USER EXEC",
+        "notes": "The device name followed by '>' signifies USER EXEC mode",
         "mastery": 0
     },
     {
@@ -60,45 +24,9 @@
         "mastery": 0
     },
     {
-        "question": "New console cable connects USB to __-USB",
-        "answer": "MINI",
-        "notes": "The newer console cables dont use the DB9 as computers and laptops no longer have the physical port to connect to it. The USB portion is more compatible with newer PCs and the Mini USB is also compatible with newer network devices (USB C is newer ever still)",
-        "mastery": 0
-    },
-    {
         "question": "When using Windows under Device Manager, what is the name of the port for the serial connection",
         "answer": "COM",
         "notes": "The COM port is used for the serical connections and used in PuTTY to connect the COM port # to the network device",
-        "mastery": 0
-    },
-    {
-        "question": "Serial connection question, Speed",
-        "answer": 9600,
-        "notes": "The default speed of 9600 work for connecting using the serial connection in the network device console port",
-        "mastery": 0
-    },
-    {
-        "question": "Serial connection question, how many data bits",
-        "answer": 8,
-        "notes": "The default data bits are 8 for connecting using the serial connection in the network device console port",
-        "mastery": 0
-    },
-    {
-        "question": "Serial connection question, how many stop bits",
-        "answer": 1,
-        "notes": "The default stop bits are 1 for connecting using the serial connection in the network device console port",
-        "mastery": 0
-    },
-    {
-        "question": "Serial connection question, What is the parity set to",
-        "answer": "NONE",
-        "notes": "The default Parity is set to None as default for connecting using the serial connection in the network device console port",
-        "mastery": 0
-    },
-    {
-        "question": "Serial connection question, What is the Flow control set to",
-        "answer": "NONE",
-        "notes": "The default Flow control is set to None as default for connecting using the serial connection in the network device console port",
         "mastery": 0
     },
     {
@@ -108,52 +36,16 @@
         "mastery": 0
     },
     {
-        "question": "Why would a network device not acquire an IP address",
-        "answer": "NOT BOOTING UP",
-        "notes": "If the network device fails to start up then there will be no IP address to connect to, using the console connection you can view the boot up process and the error messages when it fails to boot up.",
-        "mastery": 0
-    },
-    {
-        "question": "what is the IOS command used to view all the commands that are available in the command hierarchy",
-        "answer": "?",
-        "notes": "The question mark (?) is used to list all the available commands in the command lines current command hierarchy",
-        "mastery": 0
-    },
-    {
-        "question": "What is the level 1 in the command line hierarchy. __ exec mode",
-        "answer": "USER",
-        "notes": "USER exec mode is the first level when logging into the Cisco IOS",
-        "mastery": 0
-    },
-    {
-        "question": "What commands takes you from User Exec to Privilege exec mode",
-        "answer": "ENABLE",
-        "notes": "The enable keyword goes up a level in the command line hierarchy",
-        "mastery": 0
-    },
-    {
-        "question": "What is the level 2 in the command line hierarchy. __ exec mode",
-        "answer": "PRIVILEGE",
-        "notes": "Privilege exec mode is the level 2 command line hierarchy in Cisco IOS",
-        "mastery": 0
+        "question": "what are different types of Cisco OS's",
+        "answer": "NX-OS IOS-XR IOS-XE",
+        "notes": "NX-OS is the Cisco nexus data center IOS-XR runs on service provider routers IOS-XE runs on the ASR1000 of service provider routers",
+        "mastery": 2
     },
     {
         "question": "What command takes you from Privilege mode into User mode",
         "answer": "DISABLE",
         "notes": "the Disable command allows you to exit privilege exec mode",
-        "mastery": 0
-    },
-    {
-        "question": "(mode question) Router>",
-        "answer": "USER EXEC",
-        "notes": "The device name followed by '>' signifies USER EXEC mode",
-        "mastery": 0
-    },
-    {
-        "question": "(mode question) Router#",
-        "answer": "PRIVILEGE EXEC",
-        "notes": "The device name followed by '#' signifies PRIVILEGE EXEC mode",
-        "mastery": 0
+        "mastery": 2
     },
     {
         "question": "(command abbreviation)Router>en",
@@ -162,33 +54,141 @@
         "mastery": 0
     },
     {
-        "question": "the SHOW command is a part of this command hierarchy",
-        "answer": "PRIVILEGE EXEC",
-        "notes": "the show command is typically ran through the PRIVILEGE EXEC mode, it could be run in higher level command modes with the DO command 'DO SHOW'",
-        "mastery": 0
+        "question": "(mode question)Router(config)#",
+        "answer": "GLOBAL CONFIGURATION",
+        "notes": "The device name followed by '(config)#' signifies global configuration mode",
+        "mastery": 2
     },
     {
-        "question": "from PRIVILIGE EXEC what command will switch mode into a configure mode",
-        "answer": "CONFIGURE TERMINAL",
-        "notes": "The configure Terminal command, will enter the configuration mode from PRIVILIGE EXEC mode",
-        "mastery": 0
+        "question": "(mode question) Router#",
+        "answer": "PRIVILEGE EXEC",
+        "notes": "The device name followed by '#' signifies PRIVILEGE EXEC mode",
+        "mastery": 2
+    },
+    {
+        "question": "UNSECURE way to connect to a network devices command line interface",
+        "answer": "TELNET",
+        "notes": "Telnet is supported but not reccomended",
+        "mastery": 2
+    },
+    {
+        "question": "Network device management question, What is the name for the network that is used just for managing network devices",
+        "answer": "MANAGEMENT NETWORK",
+        "notes": "The reason for separating the networks allows for a path to to the network devices if the Production network were to be down.",
+        "mastery": 1
+    },
+    {
+        "question": "Serial connection question, how many data bits",
+        "answer": 8,
+        "notes": "The default data bits are 8 for connecting using the serial connection in the network device console port",
+        "mastery": 1
+    },
+    {
+        "question": "Serial connection question, What is the Flow control set to",
+        "answer": "NONE",
+        "notes": "The default Flow control is set to None as default for connecting using the serial connection in the network device console port",
+        "mastery": 2
+    },
+    {
+        "question": "What is the level 2 in the command line hierarchy. __ exec mode",
+        "answer": "PRIVILEGE",
+        "notes": "Privilege exec mode is the level 2 command line hierarchy in Cisco IOS",
+        "mastery": 1
+    },
+    {
+        "question": "Serial connection question, What is the parity set to",
+        "answer": "NONE",
+        "notes": "The default Parity is set to None as default for connecting using the serial connection in the network device console port",
+        "mastery": 1
+    },
+    {
+        "question": "What is the name of the server that enforces secure logins through this centralized server",
+        "answer": "AAA SERVER",
+        "notes": "Enterprises will user (AAA) Authentication, Authorization, and Accounting server for secure login to network devices.",
+        "mastery": 1
+    },
+    {
+        "question": "What is the level 1 in the command line hierarchy. __ exec mode",
+        "answer": "USER",
+        "notes": "USER exec mode is the first level when logging into the Cisco IOS",
+        "mastery": 2
+    },
+    {
+        "question": "New console cable connects USB to __-USB",
+        "answer": "MINI",
+        "notes": "The newer console cables dont use the DB9 as computers and laptops no longer have the physical port to connect to it. The USB portion is more compatible with newer PCs and the Mini USB is also compatible with newer network devices (USB C is newer ever still)",
+        "mastery": 2
+    },
+    {
+        "question": "what is the IOS command used to view all the commands that are available in the command hierarchy",
+        "answer": "?",
+        "notes": "The question mark (?) is used to list all the available commands in the command lines current command hierarchy",
+        "mastery": 1
+    },
+    {
+        "question": "Command line interface for SECURELY connecting to the devices management IP address over the network",
+        "answer": "SSH",
+        "notes": "SSH is a secure way to connect to the command line interface over the network",
+        "mastery": 1
+    },
+    {
+        "question": "Serial connection question, Speed",
+        "answer": 9600,
+        "notes": "The default speed of 9600 work for connecting using the serial connection in the network device console port",
+        "mastery": 1
     },
     {
         "question": "What is a shortened command for CONFIGURE TERMINAL",
         "answer": "CONF T",
         "notes": "conf t command is the shortened version for CONFIGURE TERMINAL",
-        "mastery": 0
+        "mastery": 2
     },
     {
-        "question": "(mode question)Router(config)#",
-        "answer": "GLOBAL CONFIGURATION",
-        "notes": "The device name followed by '(config)#' signifies global configuration mode",
-        "mastery": 0
+        "question": "the SHOW command is a part of this command hierarchy",
+        "answer": "PRIVILEGE EXEC",
+        "notes": "the show command is typically ran through the PRIVILEGE EXEC mode, it could be run in higher level command modes with the DO command 'DO SHOW'",
+        "mastery": 1
+    },
+    {
+        "question": "Network management question: ___ management uses the management network",
+        "answer": "OUT OF BAND",
+        "notes": "Out of band management uses the dedicated management network to manage the network devices",
+        "mastery": 4
+    },
+    {
+        "question": "What commands takes you from User Exec to Privilege exec mode",
+        "answer": "ENABLE",
+        "notes": "The enable keyword goes up a level in the command line hierarchy",
+        "mastery": 4
     },
     {
         "question": "",
         "answer": "",
         "notes": "",
-        "mastery": 0
+        "mastery": 5
+    },
+    {
+        "question": "Serial connection question, how many stop bits",
+        "answer": 1,
+        "notes": "The default stop bits are 1 for connecting using the serial connection in the network device console port",
+        "mastery": 3
+    },
+    {
+        "question": "from PRIVILIGE EXEC what command will switch mode into a configure mode",
+        "answer": "CONFIGURE TERMINAL",
+        "notes": "The configure Terminal command, will enter the configuration mode from PRIVILIGE EXEC mode",
+        "mastery": 3
+    },
+    {
+        "question": "Why would a network device not acquire an IP address",
+        "answer": "NOT BOOTING UP",
+        "notes": "If the network device fails to start up then there will be no IP address to connect to, using the console connection you can view the boot up process and the error messages when it fails to boot up.",
+        "mastery": 3
+    },
+    {
+        "question": "Name of popular client used to connect to network devices",
+        "answer": "PUTTY",
+        "notes": "PuTTY is a client used to connect to network devices over serial, Telnet, and SSH",
+        "mastery": 3
     }
 ]
