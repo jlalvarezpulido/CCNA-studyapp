@@ -69,7 +69,7 @@ def challenge():
     ques = f'{data[random_number]["question"]}\n'
     wrapped_ques = textwrap.fill(ques, width=70, break_long_words=False, break_on_hyphens=False)
     res = input(wrapped_ques + f"{Colors.BRIGHT_CYAN}\n#").upper()
-    if res == str(data[random_number]["answer"]):
+    if res == str(data[random_number]["answer"]).upper():
         data[random_number]["mastery"] += 1
         print(f"{Colors.GREEN}correct{Colors.RESET}")
         print(textwrap.fill(data[random_number]["notes"], width=70, break_long_words=False, break_on_hyphens=False))
@@ -121,14 +121,10 @@ while loop:
         case "chal":
             challenge()
 
-        case "debug h":
-            print(high_mastery)
-
-        case "debug n":
-            print(normal_mastery)
-
-        case "debug l":
-            print(low_mastery)
+        case "debug":
+            print(f"high_mastery: {len(high_mastery)}")
+            print(f"normal_mastery: {len(normal_mastery)}")
+            print(f"low_mastery: {len(low_mastery)}")
 
         case "clear":
             os.system('cls' if os.name == 'nt' else 'clear')
