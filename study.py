@@ -40,11 +40,11 @@ def reset():
         json.dump(save_data, f, indent=4)
 
 def challenge():
-
+    
     random_mastery = random.randint(1,100)
     #percents are rounded down in steps of 1% ie. .255 => 25%
     LM_PERCENT = 0.45 
-    HM_PERCENT = 0.05
+    HM_PERCENT = 0.03
     # Mapping priority order based on random_mastery value
     mastery_options = [
             # random_mastery < LM_PERCENT * 10
@@ -63,7 +63,8 @@ def challenge():
 
     if data is None:
         print("ERROR: no questions loaded from JSON file")
-    random_number = (random.randint(0, (len(data) - 1) * 1000)) % len(data)
+    random_section = random.randint(0, 3)
+    random_number = 0 if random_section == 0 else len(data) // 6 if random_section == 1 else 3 * len(data) // 6 if random_section == 2 else 5 * len(data) // 6
 
     ques = f'{data[random_number]["question"]}\n'
     wrapped_ques = textwrap.fill(ques, width=70, break_long_words=False, break_on_hyphens=False)
