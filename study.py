@@ -20,11 +20,15 @@ with open(json_path, "r") as f:
 low_mastery = []
 normal_mastery = []
 high_mastery = []
+#threshold for amount of times question should be answered correctly before being moved into high and low mastery list
+HM_THRESHOLD = 2
+LM_THRESHOLD = 0
+
 for entry in json_data:
     value = entry.get("mastery")
-    if value < 0:
+    if value < LM_THRESHOLD:
         low_mastery.append(entry)
-    elif 0 <= value < 3:
+    elif LM_THRESHOLD <= value < HM_THRESHOLD:
         normal_mastery.append(entry)
     else:
         high_mastery.append(entry)
@@ -45,7 +49,7 @@ def challenge():
     
     random_mastery = random.randint(1,100)
     #percents are rounded down in steps of 1% ie. .255 => 25%
-    LM_PERCENT = 0.45 
+    LM_PERCENT = 0.10 
     HM_PERCENT = 0.03
     # Mapping priority order based on random_mastery value
     mastery_options = [
@@ -76,11 +80,11 @@ def challenge():
         print(f"{Colors.GREEN}correct{Colors.RESET}")
         print(textwrap.fill(data[random_number]["notes"], width=70, break_long_words=False, break_on_hyphens=False))
         print(f'{Colors.BLUE}mastery++ :{data[random_number]["mastery"]}\n{Colors.RESET}')
-        if data[random_number]["mastery"] < 0:
+        if data[random_number]["mastery"] < LM_THRESHOLD:
             low_mastery.append(data[random_number])
             del data[random_number]
 
-        elif 0 <= data[random_number]["mastery"] < 3:
+        elif LM_THRESHOLD <= data[random_number]["mastery"] < HM_THRESHOLD:
             normal_mastery.append(data[random_number])
             del data[random_number]
 
@@ -94,11 +98,11 @@ def challenge():
         print("answer ", data[random_number]["answer"])
         print(textwrap.fill(data[random_number]["notes"], width=70, break_long_words=False, break_on_hyphens=False))
 
-        if data[random_number]["mastery"] < 0:
+        if data[random_number]["mastery"] < LM_THRESHOLD:
             low_mastery.append(data[random_number])
             del data[random_number]
 
-        elif 0 <= data[random_number]["mastery"] < 3:
+        elif LM_THRESHOLD <= data[random_number]["mastery"] < HM_THRESHOLD:
             normal_mastery.append(data[random_number])
             del data[random_number]
 
