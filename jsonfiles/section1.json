@@ -48,12 +48,6 @@
         "mastery": 0
     },
     {
-        "question": "Network management question: ___ management uses the management network",
-        "answer": "OUT OF BAND",
-        "notes": "Out of band management uses the dedicated management network to manage the network devices",
-        "mastery": 0
-    },
-    {
         "question": "(mode question)Which command line mode allows you to use the copy command",
         "answer": "privilege exec",
         "notes": "the privilege exec mode (enable) allows you to use the copy command",
@@ -147,12 +141,6 @@
         "question": "Name of popular client used to connect to network devices",
         "answer": "PUTTY",
         "notes": "PuTTY is a client used to connect to network devices over serial, Telnet, and SSH",
-        "mastery": 0
-    },
-    {
-        "question": "Besides the show running-config command which command is the most popular show command",
-        "answer": "show interface brief",
-        "notes": "The show interface brief command is a very popular command that shows the status of the routers interfaces as well as any IP addresses configured to the ports",
         "mastery": 0
     },
     {
@@ -297,6 +285,18 @@
         "question": "enter interface configuration level for fastEthernet 0/0: Router1(config)#",
         "answer": "interface fastEthernet 0/0",
         "notes": "The interface command allows you to enter into interface configuration mode. You can view available interfaces on the router using command: show ip interface brief",
+        "mastery": 0
+    },
+    {
+        "question": "Network management question: ___ management uses the management network",
+        "answer": "OUT OF BAND",
+        "notes": "Out of band management uses the dedicated management network to manage the network devices",
+        "mastery": 1
+    },
+    {
+        "question": "Besides the show running-config command which command is the most popular show command",
+        "answer": "show interface brief",
+        "notes": "The show interface brief command is a very popular command that shows the status of the routers interfaces as well as any IP addresses configured to the ports",
         "mastery": 0
     }
 ]

@@ -4,6 +4,8 @@ import os, readline
 import curses
 import textwrap
 from path_chooser import path_chooser
+from term_f import terminal_format
+
 
 class Colors:
     RED = '\033[91m'
@@ -23,6 +25,7 @@ high_mastery = []
 #threshold for amount of times question should be answered correctly before being moved into high and low mastery list
 HM_THRESHOLD = 2
 LM_THRESHOLD = 0
+TERMINAL_SIZE = os.get_terminal_size()
 
 for entry in json_data:
     value = entry.get("mastery")
@@ -73,7 +76,7 @@ def challenge():
     random_number = 0 if random_section == 0 else len(data) // 6 if random_section == 1 else 3 * len(data) // 6 if random_section == 2 else 5 * len(data) // 6
 
     ques = f'{data[random_number]["question"]}\n'
-    wrapped_ques = textwrap.fill(ques, width=70, break_long_words=False, break_on_hyphens=False)
+    wrapped_ques = terminal_format(ques,TERMINAL_SIZE.columns)
     res = input(wrapped_ques + f"{Colors.BRIGHT_CYAN}\n#").upper()
     if res == str(data[random_number]["answer"]).upper():
         data[random_number]["mastery"] += 1

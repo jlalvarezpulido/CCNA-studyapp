@@ -1,4 +1,5 @@
 import curses
+import textwrap
 import os
 
 def path_chooser(stdscr):
@@ -31,5 +32,3 @@ def path_chooser(stdscr):
             break
 
     return chosen_path
-
-
