@@ -1,7 +1,9 @@
 import random
 import json
-import os
+import os, readline
+import curses
 import textwrap
+from path_chooser import path_chooser
 
 class Colors:
     RED = '\033[91m'
@@ -11,7 +13,7 @@ class Colors:
     BRIGHT_CYAN = '\033[96m'
     RESET = '\033[0m'
 
-json_path = "jsonfiles/section1.json"
+json_path = curses.wrapper(path_chooser)
 with open(json_path, "r") as f:
     json_data = json.load(f)
 
@@ -112,7 +114,7 @@ while loop:
     if loop_count < 1:
         print(f"{Colors.BLUE}Welcome to the study TTY app, Take on callenges and level up your mastery\nplease enter your command:{Colors.RESET}")
 
-    status = input("for help type help\n#")
+    status = input(f"{Colors.GREEN}High Mastery: {len(high_mastery)} {Colors.YELLOW}Learning: {len(normal_mastery)} {Colors.RED} Low Mastery: {len(low_mastery)}\n{Colors.RESET}for help type help\n#")
     match status:
 
         case "help":
@@ -133,7 +135,7 @@ while loop:
             loop = False
 
         case "reset":
-            reset_auth = input(f"{Colors.YELLOW}Are you sure you would like to delete progress\n(y - for yes)#{Colors.RESET}")
+            reset_auth = input(f"{Colors.YELLOW}Are you sure you would like to delete progress\n(y - for yes)#{Colors.RESET}").upper()
             if reset_auth.upper() == "Y":
                 reset()
                 loop = False
