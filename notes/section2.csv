@@ -1,0 +1,38 @@
+"question","answer","notes","mastery"
+"What is the process of adjusting the flow of data from the sender to ensure that ther receiving host can handle all of it","flow control","Flow control ensures that the receiving host can handle all the traffic being sent to it, it does this by adjusting the flow of data",0
+"Besides flow control what is a key feature that may be provided by the transport layer","error recovery","Error Recovery and Data Flow are the 2 main features that the transport layer takes care of",0
+"Will the transport layer always handle error recovery and flow control","no","",0
+"The process by which a host is able to support multiple sessions simultaneously and manage traffic over a single link","session multiplexing","Session multiplexing allows the host to support many sessions at the same time and manage it all over a sinble data line",0
+"What is a session?","active connection to a port","A host device can have multiple sessions to different servers, each session is the communication line to that server over a port, ports are often categorized by a defined service and protocol",0
+"What's the protocol for port 25","smtp","SMTP stands for Simple Mail Transfer Protocol. It's the standard communication protocol used for sending and receiving email messages over the internet",0
+"What's the protocol for port 80","http","HTTP stands for Hypertext Transfer Protocol. It's the foundation of data communication on the World Wide Web, allowing web browsers and servers to exchange information",0
+"What is one reason for combining the source and destination port number in a segment","track sessions","When a host sends a segment over the network, the host also adds the source port number. The destionation number is also included so that the segment arrives to the port number. Both of these can be used to track sessions",0
+"What is used to identify the upper layer protocol?","destination port number","The destination port number can be used to identify the upper layer protocol",0 
+"The source port number is often a random number above __","1024","A random port number above 1024 is often used as the source port from a client device",0
+"When a server returns traffic it flips the Destination and Source port, which network device uses this information to filter packets?","stateful firewall","Stateful firewalls use connection Tracking – When a device initiates a connection (like a TCP handshake) the firewall records details such as source/destination IP addresses and port numbers.", 0
+"Besides TCP which other popular L4 protocol is used","UDP","UDP and TCP are the 2 common L4 protocols",0
+"Which L4 protocol is connection oriented","TCP","TCP is connection oriented. Meaning that data can be transfered bidirectionally once a connection is established",0
+"TCP uses what to ensure segments are processed in the correct order and none are missing","sequencing","Sequencing ensures segments are processed in order",0
+"Which L4 protocol returns acknowledgments back to the sender, to ensure no segments are missing", "TCP","TCP is reliable as it ensures lost segments are resent",0
+"Does TCP perform flow control","YES","TCP performs flow control",0
+"First step of TCP 3 way handshake: Sender sends _ to Receiver","SYN","Sender sends Synchronize message (SYN) to Receiving device",0
+"Second step of TCP 3 way handshake: Receiver sends _ back to Sender","SYN-ACK","Second step, Receiver sends a Synchronized Acknowledgment back to the sender",0
+"Third step of TCP 3 way handshake: Sender sends _ back to the Receiver","ACK","The last step the Sender sends an Acknowldegment (ACK) back to the receiver",0
+"How many bits for both the source and destination port combined","32","The source port is 16 bits the destination port is 16 bits both are 32 bits",0
+"bow many Bytes for the TCP header","20","20 Bytes for the entire TCP header",0
+"TCP port 21","FTP","",0
+"TCP port 22","SSH","",0
+"TCP port 23","Telnet","",0
+"TCP port 80","HTTP","",0
+"TCP port 443","HTTPS","",0
+"UDP port 69","TFTP","",0
+"UDP port 161","SNMP","",0
+"TCP/UDP port 53","DNS","",0
+"FTP L4 protocol","TCP","",0
+"SSH L4 protocol","TCP","",0
+"Telnet L4 protocol","TCP","",0
+"HTTP L4 protocol","TCP","",0
+"HTTPS L4 protocol","TCP","",0
+"TFTP L4 protocol","UDP","",0
+"SNMP L4 protocol","UDP","",0
+"DNS L4 protocol","TCP/UDP","",0

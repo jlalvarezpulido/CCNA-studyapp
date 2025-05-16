@@ -97,10 +97,11 @@ def challenge():
             del data[random_number]
     else:
         data[random_number]["mastery"] -= 1
-        print(f"{Colors.RED}incorrect\n{Colors.RESET}")
-        print(f'{Colors.YELLOW}mastery-- :{data[random_number]["mastery"]}\n{Colors.RESET}')
-        print("answer ", data[random_number]["answer"])
+        print(f"{Colors.RED}incorrect{Colors.RESET}")
+        answer = terminal_format(data[random_number]["answer"], TERMINAL_SIZE.columns)
+        print(f"{Colors.RED}answer: \n", answer)
         print(terminal_format(data[random_number]["notes"],TERMINAL_SIZE.columns))
+        print(f'{Colors.YELLOW}mastery-- :{data[random_number]["mastery"]}\n{Colors.RESET}')
 
         if data[random_number]["mastery"] < LM_THRESHOLD:
             low_mastery.append(data[random_number])
