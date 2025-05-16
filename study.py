@@ -23,7 +23,7 @@ low_mastery = []
 normal_mastery = []
 high_mastery = []
 #threshold for amount of times question should be answered correctly before being moved into high and low mastery list
-HM_THRESHOLD = 2
+HM_THRESHOLD = 1
 LM_THRESHOLD = 0
 TERMINAL_SIZE = os.get_terminal_size()
 
@@ -72,6 +72,7 @@ def challenge():
 
     if data is None:
         print("ERROR: no questions loaded from JSON file")
+
     random_section = random.randint(0, 3)
     random_number = 0 if random_section == 0 else len(data) // 6 if random_section == 1 else 3 * len(data) // 6 if random_section == 2 else 5 * len(data) // 6
 
@@ -81,7 +82,7 @@ def challenge():
     if res == str(data[random_number]["answer"]).upper():
         data[random_number]["mastery"] += 1
         print(f"{Colors.GREEN}correct{Colors.RESET}")
-        print(textwrap.fill(data[random_number]["notes"], width=70, break_long_words=False, break_on_hyphens=False))
+        print(terminal_format(data[random_number]["notes"],TERMINAL_SIZE.columns))
         print(f'{Colors.BLUE}mastery++ :{data[random_number]["mastery"]}\n{Colors.RESET}')
         if data[random_number]["mastery"] < LM_THRESHOLD:
             low_mastery.append(data[random_number])
@@ -99,7 +100,7 @@ def challenge():
         print(f"{Colors.RED}incorrect\n{Colors.RESET}")
         print(f'{Colors.YELLOW}mastery-- :{data[random_number]["mastery"]}\n{Colors.RESET}')
         print("answer ", data[random_number]["answer"])
-        print(textwrap.fill(data[random_number]["notes"], width=70, break_long_words=False, break_on_hyphens=False))
+        print(terminal_format(data[random_number]["notes"],TERMINAL_SIZE.columns))
 
         if data[random_number]["mastery"] < LM_THRESHOLD:
             low_mastery.append(data[random_number])
