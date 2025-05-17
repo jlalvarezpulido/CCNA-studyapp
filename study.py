@@ -114,7 +114,7 @@ def challenge():
         else:
             high_mastery.append(data[random_number])
             del data[random_number]
-        print("\n")
+    input("Press enter to continue\n")
 
 loop = True
 loop_count = 0
@@ -130,7 +130,9 @@ while loop:
             print(f"{Colors.BLUE}commands below:\nchal - take on a challenge (review question\nsave - exit app saving mastery data\nexit - exit app without saving\nreset - reset all masteries and exit\nclear - clear screen{Colors.RESET}")
 
         case "chal":
+            os.system('cls' if os.name == 'nt' else 'clear')
             challenge()
+            os.system('cls' if os.name == 'nt' else 'clear')
 
         case "debug":
             print(f"high_mastery: {len(high_mastery)}")

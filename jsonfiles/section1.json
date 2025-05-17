@@ -12,36 +12,6 @@
         "mastery": -1
     },
     {
-        "question": "(mode question) Router#",
-        "answer": "PRIVILEGE EXEC",
-        "notes": "The device name followed by '#' signifies PRIVILEGE EXEC mode",
-        "mastery": -1
-    },
-    {
-        "question": "UNSECURE way to connect to a network devices command line interface",
-        "answer": "TELNET",
-        "notes": "Telnet is supported but not reccomended",
-        "mastery": 0
-    },
-    {
-        "question": "What is the name of the server that enforces secure logins through this centralized server",
-        "answer": "AAA SERVER",
-        "notes": "Enterprises will user (AAA) Authentication, Authorization, and Accounting server for secure login to network devices.",
-        "mastery": 0
-    },
-    {
-        "question": "Name of popular client used to connect to network devices",
-        "answer": "PUTTY",
-        "notes": "PuTTY is a client used to connect to network devices over serial, Telnet, and SSH",
-        "mastery": 0
-    },
-    {
-        "question": "Network device management question, What is the name for the network that all traffic goes through from a network engineer point of view",
-        "answer": "PRODUCTION NETWORK",
-        "notes": "The production network is the network path that non network devices use, network management could also use this type of network engineers may also use a completely different network for managing Network Devices",
-        "mastery": 0
-    },
-    {
         "question": "Network device management question, What is the name for the network that is used just for managing network devices",
         "answer": "MANAGEMENT NETWORK",
         "notes": "The reason for separating the networks allows for a path to to the network devices if the Production network were to be down.",
@@ -57,12 +27,6 @@
         "question": "New console cable connects USB to __-USB",
         "answer": "MINI",
         "notes": "The newer console cables dont use the DB9 as computers and laptops no longer have the physical port to connect to it. The USB portion is more compatible with newer PCs and the Mini USB is also compatible with newer network devices (USB C is newer ever still)",
-        "mastery": 0
-    },
-    {
-        "question": "When using Windows under Device Manager, what is the name of the port for the serial connection",
-        "answer": "COM",
-        "notes": "The COM port is used for the serical connections and used in PuTTY to connect the COM port # to the network device",
         "mastery": 0
     },
     {
@@ -276,6 +240,12 @@
         "mastery": 0
     },
     {
+        "question": "(mode question) Router#",
+        "answer": "PRIVILEGE EXEC",
+        "notes": "The device name followed by '#' signifies PRIVILEGE EXEC mode",
+        "mastery": 0
+    },
+    {
         "question": "(command question) complete the command to show available argmuents after the pipe section of the command sh run |",
         "answer": "sh run | ?",
         "notes": "Similar to the normal IOS command line the question mark (?) allows you to view available commands",
@@ -297,6 +267,36 @@
         "question": "Command line interface for SECURELY connecting to the devices management IP address over the network",
         "answer": "SSH",
         "notes": "SSH is a secure way to connect to the command line interface over the network",
+        "mastery": 1
+    },
+    {
+        "question": "When using Windows under Device Manager, what is the name of the port for the serial connection",
+        "answer": "COM",
+        "notes": "The COM port is used for the serical connections and used in PuTTY to connect the COM port # to the network device",
+        "mastery": 1
+    },
+    {
+        "question": "UNSECURE way to connect to a network devices command line interface",
+        "answer": "TELNET",
+        "notes": "Telnet is supported but not reccomended",
+        "mastery": 1
+    },
+    {
+        "question": "What is the name of the server that enforces secure logins through this centralized server",
+        "answer": "AAA SERVER",
+        "notes": "Enterprises will user (AAA) Authentication, Authorization, and Accounting server for secure login to network devices.",
+        "mastery": 1
+    },
+    {
+        "question": "Name of popular client used to connect to network devices",
+        "answer": "PUTTY",
+        "notes": "PuTTY is a client used to connect to network devices over serial, Telnet, and SSH",
+        "mastery": 1
+    },
+    {
+        "question": "Network device management question, What is the name for the network that all traffic goes through from a network engineer point of view",
+        "answer": "PRODUCTION NETWORK",
+        "notes": "The production network is the network path that non network devices use, network management could also use this type of network engineers may also use a completely different network for managing Network Devices",
         "mastery": 1
     }
 ]
