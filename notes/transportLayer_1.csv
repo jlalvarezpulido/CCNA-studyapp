@@ -13,26 +13,33 @@
 "Besides TCP which other popular L4 protocol is used","UDP","UDP and TCP are the 2 common L4 protocols",0
 "Which L4 protocol is connection oriented","TCP","TCP is connection oriented. Meaning that data can be transfered bidirectionally once a connection is established",0
 "TCP uses what to ensure segments are processed in the correct order and none are missing","sequencing","Sequencing ensures segments are processed in order",0
-"Which L4 protocol returns acknowledgments back to the sender, to ensure no segments are missing", "TCP","TCP is reliable as it ensures lost segments are resent",0
+"Which L4 protocol returns acknowledgments back to the sender to ensure no segments are missing", "TCP","TCP is reliable as it ensures lost segments are resent",0
 "Does TCP perform flow control","YES","TCP performs flow control",0
 "First step of TCP 3 way handshake: Sender sends _ to Receiver","SYN","Sender sends Synchronize message (SYN) to Receiving device",0
 "Second step of TCP 3 way handshake: Receiver sends _ back to Sender","SYN-ACK","Second step, Receiver sends a Synchronized Acknowledgment back to the sender",0
 "Third step of TCP 3 way handshake: Sender sends _ back to the Receiver","ACK","The last step the Sender sends an Acknowldegment (ACK) back to the receiver",0
 "How many bits for both the source and destination port combined","32","The source port is 16 bits the destination port is 16 bits both are 32 bits",0
 "bow many Bytes for the TCP header","20","20 Bytes for the entire TCP header",0
-"TCP port 21","FTP","",0
-"TCP port 22","SSH","",0
-"TCP port 23","Telnet","",0
-"TCP port 80","HTTP","",0
-"TCP port 443","HTTPS","",0
-"UDP port 69","TFTP","",0
-"UDP port 161","SNMP","",0
-"TCP/UDP port 53","DNS","",0
-"FTP L4 protocol","TCP","",0
-"SSH L4 protocol","TCP","",0
-"Telnet L4 protocol","TCP","",0
-"HTTP L4 protocol","TCP","",0
-"HTTPS L4 protocol","TCP","",0
-"TFTP L4 protocol","UDP","",0
-"SNMP L4 protocol","UDP","",0
-"DNS L4 protocol","TCP/UDP","",0
+"TCP port 21","FTP","File Transfer Protocol, used for transferring files between computers",0
+"TCP port 22","SSH","Secure Shell, used for secure remote login and command execution",0
+"TCP port 23","Telnet","Unencrypted protocol for remote access to devices",0
+"TCP port 80","HTTP","Hypertext Transfer Protocol, used for web browsing",0
+"TCP port 443","HTTPS","Secure version of HTTP, encrypting web traffic",0
+"UDP port 69","TFTP","Trivial File Transfer Protocol, lightweight file transfer without authentication",0
+"UDP port 161","SNMP","Simple Network Management Protocol, used for monitoring and managing network devices",0
+"TCP/UDP port 53","DNS","Domain Name System, resolves domain names to IP addresses",0
+"FTP L4 protocol","TCP","Transport layer protocol used for reliable file transfers",0
+"SSH L4 protocol","TCP","Transport layer protocol ensuring secure remote communication",0
+"Telnet L4 protocol","TCP","Transport layer protocol for remote device access",0
+"HTTP L4 protocol","TCP","Transport layer protocol used for web communication",0
+"HTTPS L4 protocol","TCP","Secure transport layer protocol for encrypted web communication",0
+"TFTP L4 protocol","UDP","Transport layer protocol for simple file transfers",0
+"SNMP L4 protocol","UDP","Transport layer protocol for network management",0
+"DNS L4 protocol","TCP/UDP","Transport layer protocol enabling domain name resolution",0
+"L4 Protocol sends traffic best effort","UDP","UDP sends traffic in best effort approach",0
+"Does not use sequencing","UDP","UDP does not carry out sequencing to ensure segments are processed in the correct order",0
+"term used for TCP that means the receiving host sends acknowledgments back to the sender","reliable","Unlike TCP; UDP is not reliable- the receiving host does not send acks back to the sender",0
+"L4 protocol that leaves error recovery to the upper layers to provide","UDP","UDP does not provide error recovery",0
+"L4 protocol that app developers use for traffic which requires reliability","TCP","TCP is chosen for applications that require data reliability",0
+"L4 protocol for Voice and Video applications that can't afford extra overhead","UDP","UDP is better used for real time apps like video calling and voice over network",0
+
