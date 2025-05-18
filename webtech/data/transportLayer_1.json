@@ -1,0 +1,260 @@
+[
+    {
+        "question": "What is the process of adjusting the flow of data from the sender to ensure that ther receiving host can handle all of it",
+        "answer": "flow control",
+        "notes": "Flow control ensures that the receiving host can handle all the traffic being sent to it, it does this by adjusting the flow of data",
+        "mastery": 0
+    },
+    {
+        "question": "Besides flow control what is a key feature that may be provided by the transport layer",
+        "answer": "error recovery",
+        "notes": "Error Recovery and Data Flow are the 2 main features that the transport layer takes care of",
+        "mastery": 0
+    },
+    {
+        "question": "Will the transport layer always handle error recovery and flow control",
+        "answer": "no",
+        "notes": "",
+        "mastery": 0
+    },
+    {
+        "question": "The process by which a host is able to support multiple sessions simultaneously and manage traffic over a single link",
+        "answer": "session multiplexing",
+        "notes": "Session multiplexing allows the host to support many sessions at the same time and manage it all over a sinble data line",
+        "mastery": 0
+    },
+    {
+        "question": "What is a session?",
+        "answer": "active connection to a port",
+        "notes": "A host device can have multiple sessions to different servers, each session is the communication line to that server over a port, ports are often categorized by a defined service and protocol",
+        "mastery": 0
+    },
+    {
+        "question": "What's the protocol for port 25",
+        "answer": "smtp",
+        "notes": "SMTP stands for Simple Mail Transfer Protocol. It's the standard communication protocol used for sending and receiving email messages over the internet",
+        "mastery": 0
+    },
+    {
+        "question": "What's the protocol for port 80",
+        "answer": "http",
+        "notes": "HTTP stands for Hypertext Transfer Protocol. It's the foundation of data communication on the World Wide Web, allowing web browsers and servers to exchange information",
+        "mastery": 0
+    },
+    {
+        "question": "What is one reason for combining the source and destination port number in a segment",
+        "answer": "track session",
+        "notes": "When a host sends a segment over the network, the host also adds the source port number. The destionation number is also included so that the segment arrives to the port number. Both of these can be used to track sessions",
+        "mastery": 0
+    },
+    {
+        "question": "What is used to identify the upper layer protocol?",
+        "answer": "destination port",
+        "notes": "The destination port number can be used to identify the upper layer protocol",
+        "mastery": 0
+    },
+    {
+        "question": "The source port number is often a random number above __",
+        "answer": 1024,
+        "notes": "A random port number above 1024 is often used as the source port from a client device",
+        "mastery": 0
+    },
+    {
+        "question": "When a server returns traffic it flips the Destination and Source port, which network device uses this information to filter packets?",
+        "answer": "stateful firewall",
+        "notes": "Stateful firewalls use connection Tracking \u2013 When a device initiates a connection (like a TCP handshake) the firewall records details such as source/destination IP addresses and port numbers.",
+        "mastery": 0
+    },
+    {
+        "question": "Besides TCP which other popular L4 protocol is used",
+        "answer": "UDP",
+        "notes": "UDP and TCP are the 2 common L4 protocols",
+        "mastery": 0
+    },
+    {
+        "question": "Which L4 protocol is connection oriented",
+        "answer": "TCP",
+        "notes": "TCP is connection oriented. Meaning that data can be transfered bidirectionally once a connection is established",
+        "mastery": 0
+    },
+    {
+        "question": "TCP uses what to ensure segments are processed in the correct order and none are missing",
+        "answer": "sequencing",
+        "notes": "Sequencing ensures segments are processed in order",
+        "mastery": 0
+    },
+    {
+        "question": "Which L4 protocol returns acknowledgments back to the sender to ensure no segments are missing",
+        "answer": "\"TCP\"",
+        "notes": "TCP is reliable as it ensures lost segments are resent",
+        "mastery": 0
+    },
+    {
+        "question": "Does TCP perform flow control",
+        "answer": "YES",
+        "notes": "TCP performs flow control",
+        "mastery": 0
+    },
+    {
+        "question": "First step of TCP 3 way handshake: Sender sends _ to Receiver",
+        "answer": "SYN",
+        "notes": "Sender sends Synchronize message (SYN) to Receiving device",
+        "mastery": 0
+    },
+    {
+        "question": "Second step of TCP 3 way handshake: Receiver sends _ back to Sender",
+        "answer": "SYN-ACK",
+        "notes": "Second step, Receiver sends a Synchronized Acknowledgment back to the sender",
+        "mastery": 0
+    },
+    {
+        "question": "Third step of TCP 3 way handshake: Sender sends _ back to the Receiver",
+        "answer": "ACK",
+        "notes": "The last step the Sender sends an Acknowldegment (ACK) back to the receiver",
+        "mastery": 0
+    },
+    {
+        "question": "How many bits for both the source and destination port combined",
+        "answer": 32,
+        "notes": "The source port is 16 bits the destination port is 16 bits both are 32 bits",
+        "mastery": 0
+    },
+    {
+        "question": "bow many Bytes for the TCP header",
+        "answer": 20,
+        "notes": "20 Bytes for the entire TCP header",
+        "mastery": 0
+    },
+    {
+        "question": "TCP port 21",
+        "answer": "FTP",
+        "notes": "File Transfer Protocol, used for transferring files between computers",
+        "mastery": 0
+    },
+    {
+        "question": "TCP port 22",
+        "answer": "SSH",
+        "notes": "Secure Shell, used for secure remote login and command execution",
+        "mastery": 0
+    },
+    {
+        "question": "TCP port 23",
+        "answer": "Telnet",
+        "notes": "Unencrypted protocol for remote access to devices",
+        "mastery": 0
+    },
+    {
+        "question": "TCP port 80",
+        "answer": "HTTP",
+        "notes": "Hypertext Transfer Protocol, used for web browsing",
+        "mastery": 0
+    },
+    {
+        "question": "TCP port 443",
+        "answer": "HTTPS",
+        "notes": "Secure version of HTTP, encrypting web traffic",
+        "mastery": 0
+    },
+    {
+        "question": "UDP port 69",
+        "answer": "TFTP",
+        "notes": "Trivial File Transfer Protocol, lightweight file transfer without authentication",
+        "mastery": 0
+    },
+    {
+        "question": "UDP port 161",
+        "answer": "SNMP",
+        "notes": "Simple Network Management Protocol, used for monitoring and managing network devices",
+        "mastery": 0
+    },
+    {
+        "question": "TCP/UDP port 53",
+        "answer": "DNS",
+        "notes": "Domain Name System, resolves domain names to IP addresses",
+        "mastery": 0
+    },
+    {
+        "question": "FTP L4 protocol",
+        "answer": "TCP",
+        "notes": "Transport layer protocol used for reliable file transfers",
+        "mastery": 0
+    },
+    {
+        "question": "SSH L4 protocol",
+        "answer": "TCP",
+        "notes": "Transport layer protocol ensuring secure remote communication",
+        "mastery": 0
+    },
+    {
+        "question": "Telnet L4 protocol",
+        "answer": "TCP",
+        "notes": "Transport layer protocol for remote device access",
+        "mastery": 0
+    },
+    {
+        "question": "HTTP L4 protocol",
+        "answer": "TCP",
+        "notes": "Transport layer protocol used for web communication",
+        "mastery": 0
+    },
+    {
+        "question": "HTTPS L4 protocol",
+        "answer": "TCP",
+        "notes": "Secure transport layer protocol for encrypted web communication",
+        "mastery": 0
+    },
+    {
+        "question": "TFTP L4 protocol",
+        "answer": "UDP",
+        "notes": "Transport layer protocol for simple file transfers",
+        "mastery": 0
+    },
+    {
+        "question": "SNMP L4 protocol",
+        "answer": "UDP",
+        "notes": "Transport layer protocol for network management",
+        "mastery": 0
+    },
+    {
+        "question": "DNS L4 protocol",
+        "answer": "TCP/UDP",
+        "notes": "Transport layer protocol enabling domain name resolution",
+        "mastery": 0
+    },
+    {
+        "question": "L4 Protocol sends traffic best effort",
+        "answer": "UDP",
+        "notes": "UDP sends traffic in best effort approach",
+        "mastery": 0
+    },
+    {
+        "question": "Does not use sequencing",
+        "answer": "UDP",
+        "notes": "UDP does not carry out sequencing to ensure segments are processed in the correct order",
+        "mastery": 0
+    },
+    {
+        "question": "term used for TCP that means the receiving host sends acknowledgments back to the sender",
+        "answer": "reliable",
+        "notes": "Unlike TCP; UDP is not reliable- the receiving host does not send acks back to the sender",
+        "mastery": 0
+    },
+    {
+        "question": "L4 protocol that leaves error recovery to the upper layers to provide",
+        "answer": "UDP",
+        "notes": "UDP does not provide error recovery",
+        "mastery": 0
+    },
+    {
+        "question": "L4 protocol that app developers use for traffic which requires reliability",
+        "answer": "TCP",
+        "notes": "TCP is chosen for applications that require data reliability",
+        "mastery": 0
+    },
+    {
+        "question": "L4 protocol for Voice and Video applications that can't afford extra overhead",
+        "answer": "UDP",
+        "notes": "UDP is better used for real time apps like video calling and voice over network",
+        "mastery": 0
+    }
+]
