@@ -1,7 +1,12 @@
+let jsondata;
+let answer;
+let notes;
+let sessionNum = 0;
 
-let jsondata
-let answer
-let notes
+const quizQuestion = document.getElementById("Text");
+const quizResult = document.getElementById("Result");
+const quizNotes = document.getElementById("Notes");
+const quizAnswer = document.getElementById("Answer");
 
 fetch('data/transportLayer_1.json')
 	.then(response => response.json())
@@ -15,9 +20,12 @@ function changeText() {
 	const min = 0;
 	const max = 42;
 	let rand = Math.floor(Math.random() * (max - min + 1)) + min;
-            document.getElementById("Text").textContent = jsondata[rand].question;
+
+        quizQuestion.textContent = jsondata[rand].question;
 	setAnswer(jsondata[rand].answer, jsondata[rand].notes);
-        }
+	quizNotes.textContent = "";
+	quizResult.textContent = "";
+}
 
 function setAnswer(chalAnswer,chalNotes){
 	answer = chalAnswer;
@@ -26,13 +34,27 @@ function setAnswer(chalAnswer,chalNotes){
 }
 
 function answerQuestion(){
-	userAnswer = document.getElementById("Answer").value;
-	if(userAnswer.toUpperCase() === answer.toUpperCase()){
-		document.getElementById("Result").textContent = "Correct";
+	userAnswer = quizAnswer.value;
+	if(userAnswer.toString().toUpperCase() === answer.toString().toUpperCase()){
+		quizResult.textContent = "Correct";
+		quizNotes.textContent = notes;
 	}
 	else{
-		document.getElementById("Result").textContent = "Incorrect";
-		document.getElementById("Notes").textContent = notes;
+		quizResult.textContent = "Incorrect";
+		quizNotes.textContent = notes;
 	}
-	
+}
+
+function textBox(event){
+	if (event.key === "Enter"){
+		sessionNum++
+		if(sessionNum % 2 === 0){
+			quizAnswer.value = "";
+			changeText();
+		}
+		else{
+			answerQuestion();
+
+		}
+	}
 }
