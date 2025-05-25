@@ -41,6 +41,9 @@ const quizQuestion = document.getElementById("Text");
 const quizResult = document.getElementById("Result");
 const quizNotes = document.getElementById("Notes");
 const quizAnswer = document.getElementById("Answer");
+const highElement = document.getElementById("High");
+const normalElement = document.getElementById("Normal");
+const lowElement = document.getElementById("Low");
 
 function changeText() {
     if (!jsondata.length) {
@@ -50,7 +53,9 @@ function changeText() {
     let indices = qEngine();
     console.log(indices);
     let question = masteryOptions[indices[0]][indices[1]][indices[2]];
-    quizQuestion.textContent = question.question;
+    quizQuestion.textContent = question.question.toString();
+    let scoreCard = `High: ${highMastery.length.toString()} Current: ${normalMastery.length.toString()} Low: ${lowMastery.length.toString()}`;
+    normalElement.textContent = scoreCard;
     setAnswer(question.answer, question.notes, indices);
     quizNotes.textContent = "";
     quizResult.textContent = "";

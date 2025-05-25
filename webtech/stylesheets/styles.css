@@ -41,3 +41,11 @@ input.command-line {
     caret-color: #50fa7b; /* Dracula green */
 }
 
+h3 {
+    color : white;
+    display: flex;
+    justify-content: space-around; /* Spaces them out evenly */
+    gap: 20px; /* Adds space between items */
+    width: 100%; /* Ensure it takes full width */
+}
+
