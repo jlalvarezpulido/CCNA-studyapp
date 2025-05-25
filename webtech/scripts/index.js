@@ -1,5 +1,5 @@
 let jsondata = [];
-let answer, notes;
+let answer, notes, INDICES;
 let sessionNum = 0;
 
 // Thresholds
@@ -14,7 +14,7 @@ const LM_PERCENT = 0.10;
 let lowMastery = [], normalMastery = [], highMastery = [];
 
 // Fetch data and categorize questions
-fetch('data/transportLayer_1.json')
+fetch('data/section1.json')
     .then(response => response.json())
     .then(data => {
         jsondata = data;
@@ -47,33 +47,49 @@ function changeText() {
         console.error("No data available");
         return;
     }
-
-    let rand = Math.floor(Math.random() * jsondata.length);
-    quizQuestion.textContent = jsondata[rand].question;
-    setAnswer(jsondata[rand].answer, jsondata[rand].notes);
+    let indices = qEngine();
+    console.log(indices);
+    let question = masteryOptions[indices[0]][indices[1]][indices[2]];
+    quizQuestion.textContent = question.question;
+    setAnswer(question.answer, question.notes, indices);
     quizNotes.textContent = "";
     quizResult.textContent = "";
 }
 
-function setAnswer(chalAnswer, chalNotes) {
+function setAnswer(chalAnswer, chalNotes, indices) {
     answer = chalAnswer;
     notes = chalNotes;
+    INDICES = indices;
+    console.log("Data loaded and categorized:", { lowMastery, normalMastery, highMastery });
     console.log("Set Answer:", answer);
 }
 
+// handles the user input and redistributes the question to the appropriate mastery level
 function answerQuestion() {
+    //create local scope variable for current question.
+    let currentQuestion = masteryOptions[INDICES[0]][INDICES[1]][INDICES[2]];
     let userAnswer = quizAnswer.value.trim();
     console.log("User Answer:", userAnswer);
+    //remove it from its array
+    masteryOptions[INDICES[0]][INDICES[1]].splice(INDICES[2],1);
 
-    if (userAnswer.toUpperCase() === answer.toUpperCase()) {
+    //update the current quesions mastery and HTML elements based on response
+    if (userAnswer.toString().toUpperCase() === currentQuestion.answer.toString().toUpperCase()) {
         quizResult.textContent = "Correct";
-        quizNotes.textContent = notes;
+        quizNotes.textContent = currentQuestion.notes;
+        currentQuestion.mastery++
     } else {
         quizResult.textContent = "Incorrect";
-        quizNotes.textContent = `${answer}\n:${notes}`;
+        quizNotes.textContent = `${currentQuestion.answer}\n:${currentQuestion.notes}`;
+        currentQuestion.mastery--
     }
+    //redistribute the current question to the appropriate mastery array.
+    if (currentQuestion.mastery < LM_THRESHOLD) lowMastery.push(currentQuestion);
+    else if (currentQuestion.mastery < HM_THRESHOLD) normalMastery.push(currentQuestion);
+    else highMastery.push(currentQuestion);
 }
 
+// event handler for text box to behave differently between every other event Enter key
 function textBox(event) {
     if (event.key === "Enter") {
         sessionNum++;
@@ -87,16 +103,19 @@ function textBox(event) {
     }
 }
 
-function selectMasteryLevel() {
+// questionIndices are the indices for the masteryOptions array
+// This function is a random number engine
+// [masteryIndex][prioIndex][questionIndex]
+function qEngine() {
     let randomMastery = Math.random();
     let masteryIndex = randomMastery <= LM_PERCENT ? 0 :
         randomMastery <= (LM_PERCENT + HM_PERCENT) ? 1 : 2;
 
-    let selectedMasteryList = masteryOptions[masteryIndex].find(lst => lst.length > 0) || [];
+    let prioIndex = masteryOptions[masteryIndex].findIndex(lst => lst.length > 0);
 
-    if (!selectedMasteryList.length) return null;
+    if (!masteryOptions[masteryIndex].length) return null;
 
-    let sectionDivider = Math.floor(selectedMasteryList.length / 6);
+    let sectionDivider = Math.floor(masteryOptions[masteryIndex][prioIndex].length / 6);
     let randomSection = Math.floor(Math.random() * 3);
 
     let questionIndex =
@@ -104,7 +123,7 @@ function selectMasteryLevel() {
         randomSection === 1 ? sectionDivider :
         randomSection === 2 ? 3 * sectionDivider :
         5 * sectionDivider;
+    let questionIndices = [masteryIndex, prioIndex, questionIndex]
 
-    return selectedMasteryList[questionIndex] || null;
+    return  questionIndices || null;
 }
-
