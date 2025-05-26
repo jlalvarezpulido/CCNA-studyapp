@@ -1,5 +1,5 @@
 let jsondata = [];
-let answer, notes, INDICES;
+let INDICES;
 let sessionNum = 0;
 
 // Thresholds
@@ -41,32 +41,27 @@ const quizQuestion = document.getElementById("Text");
 const quizResult = document.getElementById("Result");
 const quizNotes = document.getElementById("Notes");
 const quizAnswer = document.getElementById("Answer");
-const highElement = document.getElementById("High");
-const normalElement = document.getElementById("Normal");
-const lowElement = document.getElementById("Low");
+const scoreElement = document.getElementById("Normal");
+const saveButton = document.getElementById("saveButton");
 
 function changeText() {
     if (!jsondata.length) {
         console.error("No data available");
         return;
     }
+    let scoreCard = `Low: ${lowMastery.length.toString()} Current: ${normalMastery.length.toString()} High: ${highMastery.length.toString()}`;
     let indices = qEngine();
     console.log(indices);
-    let question = masteryOptions[indices[0]][indices[1]][indices[2]];
-    quizQuestion.textContent = question.question.toString();
-    let scoreCard = `High: ${highMastery.length.toString()} Current: ${normalMastery.length.toString()} Low: ${lowMastery.length.toString()}`;
-    normalElement.textContent = scoreCard;
-    setAnswer(question.answer, question.notes, indices);
+    let currentQuestion = masteryOptions[indices[0]][indices[1]][indices[2]];
+    quizQuestion.textContent = currentQuestion.question.toString();
+    scoreElement.textContent = scoreCard;
+    setAnswer(indices);
     quizNotes.textContent = "";
     quizResult.textContent = "";
 }
 
-function setAnswer(chalAnswer, chalNotes, indices) {
-    answer = chalAnswer;
-    notes = chalNotes;
+function setAnswer(indices) {
     INDICES = indices;
-    console.log("Data loaded and categorized:", { lowMastery, normalMastery, highMastery });
-    console.log("Set Answer:", answer);
 }
 
 // handles the user input and redistributes the question to the appropriate mastery level
@@ -77,7 +72,6 @@ function answerQuestion() {
     console.log("User Answer:", userAnswer);
     //remove it from its array
     masteryOptions[INDICES[0]][INDICES[1]].splice(INDICES[2],1);
-
     //update the current quesions mastery and HTML elements based on response
     if (userAnswer.toString().toUpperCase() === currentQuestion.answer.toString().toUpperCase()) {
         quizResult.textContent = "Correct";
@@ -100,7 +94,7 @@ function textBox(event) {
         sessionNum++;
         if (sessionNum % 2 === 1) {
             quizAnswer.value = "";
-            quizAnswer.placeholder = "";
+            quizAnswer.placeholder = "Press enter to answer";
             changeText();
         } else {
             answerQuestion();
