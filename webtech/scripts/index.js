@@ -1,6 +1,9 @@
+// stored app state
 let jsondata = [];
 let INDICES;
 let sessionNum = 0;
+// Categorized mastery lists
+let lowMastery = [], normalMastery = [], highMastery = [];
 
 // Thresholds
 const HM_THRESHOLD = 1;
@@ -10,8 +13,6 @@ const LM_THRESHOLD = 0;
 const HM_PERCENT = 0.15;
 const LM_PERCENT = 0.10;
 
-// Categorized mastery lists
-let lowMastery = [], normalMastery = [], highMastery = [];
 
 // Fetch data and categorize questions
 fetch('data/section1.json')
@@ -126,3 +127,29 @@ function qEngine() {
 
     return  questionIndices || null;
 }
+
+// Save data using PUT
+saveButton.addEventListener('click', async () => {
+try {
+        const response = await fetch('data/section1.json');
+        let jsonData = await response.json();
+
+        // Modify JSON data
+	jsonData = [...lowMastery, ...normalMastery, ...highMastery];
+	console.log(jsonData);
+        // Send updated JSON back to server
+        const updateResponse = await fetch('data/section1.json', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jsonData)
+        });
+
+        if (updateResponse.ok) {
+            console.log('JSON updated successfully:', await updateResponse.json());
+        } else {
+            console.error('Error updating JSON:', updateResponse.statusText);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
