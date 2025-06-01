@@ -4,6 +4,7 @@ const fs = require('fs');
 
 const app = express();
 const PORT = 3000; // Ensure your PORT is defined
+const directoryPath = path.join(__dirname, 'data');
 
 // Middleware to serve static files and parse JSON requests
 app.use(express.static(__dirname));
@@ -15,8 +16,9 @@ app.get('/', (req, res) => {
 });
 
 // Serve JSON file dynamically
-app.get('/data/section1.json', (req, res) => {
-    const filePath = path.join(__dirname, 'data/section1.json');
+app.get('/data/:filename', (req, res) => {
+    const filePath = path.join(__dirname, 'data', req.params.filename);
+
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error("Error reading JSON file:", err);
@@ -25,10 +27,9 @@ app.get('/data/section1.json', (req, res) => {
         res.json(JSON.parse(data));
     });
 });
-
 // Update JSON file using a PUT request
-app.put('/data/section1.json', (req, res) => {
-    const filePath = path.join(__dirname, 'data/section1.json');
+app.put('/data/:filename', (req, res) => {
+    const filePath = path.join(__dirname, 'data', req.params.filename);
 
     // Validate request body
     if (!Array.isArray(req.body)) {
@@ -49,8 +50,6 @@ app.put('/data/section1.json', (req, res) => {
             }
 
             let updatedData = [...req.body]; // Replace with new data
-            updatedData.push({ updatedAt: new Date().toISOString() }); // Add timestamp
-
             fs.writeFile(filePath, JSON.stringify(updatedData, null, 2), (err) => {
                 if (err) {
                     console.error("Error writing to JSON file:", err);
@@ -62,6 +61,16 @@ app.put('/data/section1.json', (req, res) => {
             console.error("Error parsing JSON data:", parseError);
             res.status(500).json({ error: "Error parsing JSON file" });
         }
+    });
+});
+
+app.get('/files', (req, res) => {
+    fs.readdir(directoryPath, (err, files) => {
+        if (err) {
+            console.error("Error reading directory:", err);
+            return res.status(500).json({ error: "Error reading directory" });
+        }
+        res.json(files);
     });
 });
 

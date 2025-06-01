@@ -2,7 +2,6 @@
 let jsondata = [];
 let INDICES;
 let sessionNum = 0;
-// Categorized mastery lists
 let lowMastery = [], normalMastery = [], highMastery = [];
 
 // Thresholds
@@ -10,29 +9,12 @@ const HM_THRESHOLD = 1;
 const LM_THRESHOLD = 0;
 
 // Mastery percentages
-const HM_PERCENT = 0.15;
-const LM_PERCENT = 0.10;
-
-
-// Fetch data and categorize questions
-fetch('data/section1.json')
-    .then(response => response.json())
-    .then(data => {
-        jsondata = data;
-
-        jsondata.forEach(entry => {
-            const value = entry.mastery;
-            if (value < LM_THRESHOLD) lowMastery.push(entry);
-            else if (value < HM_THRESHOLD) normalMastery.push(entry);
-            else highMastery.push(entry);
-        });
-
-        console.log("Data loaded and categorized:", { lowMastery, normalMastery, highMastery });
-    })
-    .catch(error => console.error("Error loading data:", error));
+const HM_PERCENT = 0.10;
+const LM_PERCENT = 0.30;
+let JSONFILE = 'data/transportLayer_1.json';
 
 // Mastery level selection strategy
-const masteryOptions = [
+let masteryOptions = [
     [lowMastery, normalMastery, highMastery],
     [highMastery, normalMastery, lowMastery],
     [normalMastery, lowMastery, highMastery]
@@ -44,6 +26,8 @@ const quizNotes = document.getElementById("Notes");
 const quizAnswer = document.getElementById("Answer");
 const scoreElement = document.getElementById("Normal");
 const saveButton = document.getElementById("saveButton");
+const currentQuiz = document.getElementById("currentQuiz");
+const updateIndicator = document.getElementById("Update");
 
 function changeText() {
     if (!jsondata.length) {
@@ -110,35 +94,30 @@ function qEngine() {
     let randomMastery = Math.random();
     let masteryIndex = randomMastery <= LM_PERCENT ? 0 :
         randomMastery <= (LM_PERCENT + HM_PERCENT) ? 1 : 2;
-
     let prioIndex = masteryOptions[masteryIndex].findIndex(lst => lst.length > 0);
-
     if (!masteryOptions[masteryIndex].length) return null;
-
     let sectionDivider = Math.floor(masteryOptions[masteryIndex][prioIndex].length / 6);
     let randomSection = Math.floor(Math.random() * 3);
-
     let questionIndex =
         randomSection === 0 ? 0 :
         randomSection === 1 ? sectionDivider :
         randomSection === 2 ? 3 * sectionDivider :
         5 * sectionDivider;
     let questionIndices = [masteryIndex, prioIndex, questionIndex]
-
     return  questionIndices || null;
 }
 
 // Save data using PUT
 saveButton.addEventListener('click', async () => {
 try {
-        const response = await fetch('data/section1.json');
+        const response = await fetch(JSONFILE);
         let jsonData = await response.json();
 
         // Modify JSON data
 	jsonData = [...lowMastery, ...normalMastery, ...highMastery];
 	console.log(jsonData);
         // Send updated JSON back to server
-        const updateResponse = await fetch('data/section1.json', {
+        const updateResponse = await fetch(JSONFILE, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(jsonData)
@@ -146,6 +125,7 @@ try {
 
         if (updateResponse.ok) {
             console.log('JSON updated successfully:', await updateResponse.json());
+	    updateIndicator.textContent = "✅";
         } else {
             console.error('Error updating JSON:', updateResponse.statusText);
         }
@@ -153,3 +133,71 @@ try {
         console.error('Error:', error);
     }
 });
+
+// reset data using PUT
+function resetButton(){
+    let jsonData = [...lowMastery, ...normalMastery, ...highMastery];
+    jsonData.forEach(item => {
+        item.mastery = 0;
+    });
+    sessionNum = 0;
+    lowMastery = [];
+    normalMastery = [];
+    highMastery = [];
+    jsondata.forEach(entry => {
+        const value = entry.mastery;
+        if (value < LM_THRESHOLD) lowMastery.push(entry);
+        else if (value < HM_THRESHOLD) normalMastery.push(entry);
+        else highMastery.push(entry);
+    });
+    masteryOptions = [
+        [lowMastery, normalMastery, highMastery],
+        [highMastery, normalMastery, lowMastery],
+        [normalMastery, lowMastery, highMastery]
+    ];
+    let scoreCard = `Low: ${lowMastery.length.toString()} Current: ${normalMastery.length.toString()} High: ${highMastery.length.toString()}`;
+    scoreElement.textContent = scoreCard;
+    updateIndicator.textContent = "📃";
+    console.log(jsonData);
+}
+
+
+async function loadFiles() {
+    const response = await fetch('/files');
+    const files = await response.json();
+    const dropdown = document.getElementById('fileDropdown');
+    dropdown.innerHTML = files.map(file => `<option value="${file}">${file.replace(".json","")}</option>`).join('');
+}
+
+async function getSelectedFilePath() {
+    sessionNum = 0;
+    const selectedFile = document.getElementById('fileDropdown').value;
+    JSONFILE = `data/${selectedFile}`;
+    quizQuestion.textContent = `${selectedFile.replace(".json","")} Loaded 🔃`;
+    currentQuiz.textContent = `current quiz: ${selectedFile.replace(".json","")}`;
+    updateIndicator.textContent = "";
+    scoreElement.textContent = "";
+    lowMastery = [], normalMastery = [], highMastery = [];
+    masteryOptions = [
+        [lowMastery, normalMastery, highMastery],
+        [highMastery, normalMastery, lowMastery],
+        [normalMastery, lowMastery, highMastery]
+    ];
+    fetch(JSONFILE)
+        .then(response => response.json())
+        .then(data => {
+            jsondata = data;
+            jsondata.forEach(entry => {
+                const value = entry.mastery;
+                if (value < LM_THRESHOLD) lowMastery.push(entry);
+                else if (value < HM_THRESHOLD) normalMastery.push(entry);
+                else highMastery.push(entry);
+            });
+
+            console.log("Data loaded and categorized:", { lowMastery, normalMastery, highMastery });
+            console.log("Data loaded and categorized:", { masteryOptions });
+        })
+        .catch(error => console.error("Error loading data:", error));
+}
+
+window.onload = loadFiles;

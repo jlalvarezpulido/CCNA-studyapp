@@ -23,12 +23,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
-h1, h2, footer{
+h1, h2, footer, div{
     color: white;
     text-align: center;
 }
 
 input.command-line {
+    text-align: center;
     background-color: #282a36; /* Dracula background */
     align-items: center;
     color: #f8f8f2; /* Dracula foreground */
@@ -48,4 +49,37 @@ h3 {
     gap: 20px; /* Adds space between items */
     width: 100%; /* Ensure it takes full width */
 }
+.vampire-button {
+  text-align: center;
+  background: rgba(40, 42, 54, 0.8); /* Semi-transparent dark */
+  color: #f8f8f2; /* Dracula’s pale text */
+  border: 2px solid #6272a4; /* Muted blue */
+  padding: 12px 12px;
+  font-family: 'Fira Code', monospace; /* Hacker-style font */
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  border-radius: 12px; /* More modern rounded edges */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  box-shadow: 0 4px 10px rgba(98, 114, 164, 0.3); /* Soft glow */
+}
 
+.vampire-button:hover {
+  color: #c9c9b9; /* Dark mode contrast */
+}
+
+.vampire-button::before {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  font-size: 22px;
+  opacity: 0.5;
+  transition: 0.1s ease-in-out;
+}
+
+.vampire-button:hover::before {
+  opacity: 1;
+}

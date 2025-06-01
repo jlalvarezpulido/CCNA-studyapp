@@ -1,147 +1,105 @@
 [
   {
-    "question": "Serial connection question, What is the parity set to",
-    "answer": "NONE",
-    "notes": "The default Parity is set to None as default for connecting using the serial connection in the network device console port",
-    "mastery": -1
-  },
-  {
-    "question": "what are different types of Cisco OS's",
-    "answer": "NX-OS IOS-XR IOS-XE",
-    "notes": "NX-OS is the Cisco nexus data center IOS-XR runs on service provider routers IOS-XE runs on the ASR1000 of service provider routers",
-    "mastery": -2
-  },
-  {
     "question": "Serial connection question, What is the Flow control set to",
     "answer": "NONE",
     "notes": "The default Flow control is set to None as default for connecting using the serial connection in the network device console port",
-    "mastery": -1
-  },
-  {
-    "question": "Console connection Troubleshooting: when connecting to a network device if connectin to the __ ____ does not work use the console cable",
-    "answer": "IP ADDRESS",
-    "notes": "If connecting using the IP address does not work try the console cable as a trouble shooting step",
-    "mastery": -1
-  },
-  {
-    "question": "Serial connection question, how many stop bits",
-    "answer": 1,
-    "notes": "The default stop bits are 1 for connecting using the serial connection in the network device console port",
-    "mastery": -1
-  },
-  {
-    "question": "What connection method is used when setting up a new device without an IP address configured to it yet",
-    "answer": "CONSOLE CABLE",
-    "notes": "The console cable (typically DB9 to RJ45) is used for the initial configuration",
-    "mastery": -2
-  },
-  {
-    "question": "What is a shortened command for CONFIGURE TERMINAL",
-    "answer": "CONF T",
-    "notes": "conf t command is the shortened version for CONFIGURE TERMINAL",
-    "mastery": -2
-  },
-  {
-    "question": "Network device management question, What is the name for the network that is used just for managing network devices",
-    "answer": "MANAGEMENT NETWORK",
-    "notes": "The reason for separating the networks allows for a path to to the network devices if the Production network were to be down.",
-    "mastery": -1
-  },
-  {
-    "question": "what is the IOS command used to view all the commands that are available in the command hierarchy",
-    "answer": "?",
-    "notes": "The question mark (?) is used to list all the available commands in the command lines current command hierarchy",
-    "mastery": -1
-  },
-  {
-    "question": "Network management question: ___ management uses the Production network",
-    "answer": "IN BAND",
-    "notes": "in band management uses the production network, the band represents all traffic",
-    "mastery": -1
-  },
-  {
-    "question": "What commands takes you from User Exec to Privilege exec mode",
-    "answer": "ENABLE",
-    "notes": "The enable keyword goes up a level in the command line hierarchy",
-    "mastery": -1
-  },
-  {
-    "question": "New console cable connects USB to __-USB",
-    "answer": "MINI",
-    "notes": "The newer console cables dont use the DB9 as computers and laptops no longer have the physical port to connect to it. The USB portion is more compatible with newer PCs and the Mini USB is also compatible with newer network devices (USB C is newer ever still)",
-    "mastery": -1
-  },
-  {
-    "question": "Fix this command: Router1(config)#show ip interface brief",
-    "answer": "do show ip interface brief",
-    "notes": "The do command allows for the use of the show command outside of Privilege exec mode",
-    "mastery": -1
-  },
-  {
-    "question": "What is the level 2 in the command line hierarchy. __ exec mode",
-    "answer": "PRIVILEGE",
-    "notes": "Privilege exec mode is the level 2 command line hierarchy in Cisco IOS",
-    "mastery": -1
-  },
-  {
-    "question": "What command takes you from Privilege mode into User mode",
-    "answer": "DISABLE",
-    "notes": "the Disable command allows you to exit privilege exec mode",
-    "mastery": -1
-  },
-  {
-    "question": "Besides Ctrl C which command will leave from both global and interface configuration modes into privilege exec mode",
-    "answer": "end",
-    "notes": "While the exit command takes you back one level, the end command will leave configuration mode all together back into Privilege exec mode",
-    "mastery": -1
+    "mastery": 0
   },
   {
     "question": "Serial connection question, Speed",
     "answer": 9600,
     "notes": "The default speed of 9600 work for connecting using the serial connection in the network device console port",
-    "mastery": -1
-  },
-  {
-    "question": "(command abbreviation)Router>en",
-    "answer": "ENABLE",
-    "notes": "en is shortened version of the ENABLE command",
-    "mastery": -1
-  },
-  {
-    "question": "the SHOW command is a part of this command hierarchy",
-    "answer": "PRIVILEGE EXEC",
-    "notes": "the show command is typically ran through the PRIVILEGE EXEC mode, it could be run in higher level command modes with the DO command 'DO SHOW'",
-    "mastery": -1
-  },
-  {
-    "question": "Besides the show interface brief command, which command is the most popular show commad",
-    "answer": "show running-config",
-    "notes": "the show running-config command is a very popular command that shows the currently running configuration",
-    "mastery": -1
-  },
-  {
-    "question": "Serial connection question, how many data bits",
-    "answer": 8,
-    "notes": "The default data bits are 8 for connecting using the serial connection in the network device console port",
-    "mastery": -1
-  },
-  {
-    "question": "from PRIVILIGE EXEC what command will switch mode into a configure mode",
-    "answer": "CONFIGURE TERMINAL",
-    "notes": "The configure Terminal command, will enter the configuration mode from PRIVILIGE EXEC mode",
-    "mastery": -1
+    "mastery": 0
   },
   {
     "question": "(mode question)Router(config)#",
     "answer": "GLOBAL CONFIGURATION",
     "notes": "The device name followed by '(config)#' signifies global configuration mode",
-    "mastery": -1
+    "mastery": 0
+  },
+  {
+    "question": "New console cable connects USB to __-USB",
+    "answer": "MINI",
+    "notes": "The newer console cables dont use the DB9 as computers and laptops no longer have the physical port to connect to it. The USB portion is more compatible with newer PCs and the Mini USB is also compatible with newer network devices (USB C is newer ever still)",
+    "mastery": 0
+  },
+  {
+    "question": "(Command question) which command leaves interface config mode and global config mode",
+    "answer": "exit",
+    "notes": "similar to disable Privilege exec mode, exit goes down a command hierarchy level from both interface and global configuration modes",
+    "mastery": 0
   },
   {
     "question": "True or false: can you go directly into interace configuration mode from Privilege exec mode mode",
     "answer": "false",
     "notes": "In order to interface configuration mode you must go into global configuration mode first. You cannot skip a command line hierarchy level",
-    "mastery": -2
+    "mastery": 0
+  },
+  {
+    "question": "Fix this command: Router1(config)#show ip interface brief",
+    "answer": "do show ip interface brief",
+    "notes": "The do command allows for the use of the show command outside of Privilege exec mode",
+    "mastery": 0
+  },
+  {
+    "question": "Console connection Troubleshooting: when connecting to a network device if connectin to the __ ____ does not work use the console cable",
+    "answer": "IP ADDRESS",
+    "notes": "If connecting using the IP address does not work try the console cable as a trouble shooting step",
+    "mastery": 0
+  },
+  {
+    "question": "What connection method is used when setting up a new device without an IP address configured to it yet",
+    "answer": "CONSOLE CABLE",
+    "notes": "The console cable (typically DB9 to RJ45) is used for the initial configuration",
+    "mastery": 0
+  },
+  {
+    "question": "enter interface configuration level for fastEthernet 0/0: Router1(config)#",
+    "answer": "interface fastEthernet 0/0",
+    "notes": "The interface command allows you to enter into interface configuration mode. You can view available interfaces on the router using command: show ip interface brief",
+    "mastery": 0
+  },
+  {
+    "question": "Network device management question, What is the name for the network that is used just for managing network devices",
+    "answer": "MANAGEMENT NETWORK",
+    "notes": "The reason for separating the networks allows for a path to to the network devices if the Production network were to be down.",
+    "mastery": 0
+  },
+  {
+    "question": "what is the IOS command used to view all the commands that are available in the command hierarchy",
+    "answer": "?",
+    "notes": "The question mark (?) is used to list all the available commands in the command lines current command hierarchy",
+    "mastery": 0
+  },
+  {
+    "question": "what are different types of Cisco OS's",
+    "answer": "NX-OS IOS-XR IOS-XE",
+    "notes": "NX-OS is the Cisco nexus data center IOS-XR runs on service provider routers IOS-XE runs on the ASR1000 of service provider routers",
+    "mastery": 0
+  },
+  {
+    "question": "Network management question: ___ management uses the Production network",
+    "answer": "IN BAND",
+    "notes": "in band management uses the production network, the band represents all traffic",
+    "mastery": 0
+  },
+  {
+    "question": "Serial connection question, how many data bits",
+    "answer": 8,
+    "notes": "The default data bits are 8 for connecting using the serial connection in the network device console port",
+    "mastery": 0
+  },
+  {
+    "question": "Serial connection question, how many stop bits",
+    "answer": 1,
+    "notes": "The default stop bits are 1 for connecting using the serial connection in the network device console port",
+    "mastery": 0
+  },
+  {
+    "question": "Serial connection question, What is the parity set to",
+    "answer": "NONE",
+    "notes": "The default Parity is set to None as default for connecting using the serial connection in the network device console port",
+    "mastery": 0
   },
   {
     "question": "Why would a network device not acquire an IP address",
@@ -156,9 +114,51 @@
     "mastery": 0
   },
   {
+    "question": "What commands takes you from User Exec to Privilege exec mode",
+    "answer": "ENABLE",
+    "notes": "The enable keyword goes up a level in the command line hierarchy",
+    "mastery": 0
+  },
+  {
+    "question": "What is the level 2 in the command line hierarchy. __ exec mode",
+    "answer": "PRIVILEGE",
+    "notes": "Privilege exec mode is the level 2 command line hierarchy in Cisco IOS",
+    "mastery": 0
+  },
+  {
+    "question": "What command takes you from Privilege mode into User mode",
+    "answer": "DISABLE",
+    "notes": "the Disable command allows you to exit privilege exec mode",
+    "mastery": 0
+  },
+  {
     "question": "(mode question) Router>",
     "answer": "USER EXEC",
     "notes": "The device name followed by '>' signifies USER EXEC mode",
+    "mastery": 0
+  },
+  {
+    "question": "(command abbreviation)Router>en",
+    "answer": "ENABLE",
+    "notes": "en is shortened version of the ENABLE command",
+    "mastery": 0
+  },
+  {
+    "question": "the SHOW command is a part of this command hierarchy",
+    "answer": "PRIVILEGE EXEC",
+    "notes": "the show command is typically ran through the PRIVILEGE EXEC mode, it could be run in higher level command modes with the DO command 'DO SHOW'",
+    "mastery": 0
+  },
+  {
+    "question": "from PRIVILIGE EXEC what command will switch mode into a configure mode",
+    "answer": "CONFIGURE TERMINAL",
+    "notes": "The configure Terminal command, will enter the configuration mode from PRIVILIGE EXEC mode",
+    "mastery": 0
+  },
+  {
+    "question": "What is a shortened command for CONFIGURE TERMINAL",
+    "answer": "CONF T",
+    "notes": "conf t command is the shortened version for CONFIGURE TERMINAL",
     "mastery": 0
   },
   {
@@ -168,15 +168,15 @@
     "mastery": 0
   },
   {
-    "question": "enter interface configuration level for fastEthernet 0/0: Router1(config)#",
-    "answer": "interface fastEthernet 0/0",
-    "notes": "The interface command allows you to enter into interface configuration mode. You can view available interfaces on the router using command: show ip interface brief",
+    "question": "Besides Ctrl C which command will leave from both global and interface configuration modes into privilege exec mode",
+    "answer": "end",
+    "notes": "While the exit command takes you back one level, the end command will leave configuration mode all together back into Privilege exec mode",
     "mastery": 0
   },
   {
-    "question": "(Command question) which command leaves interface config mode and global config mode",
-    "answer": "exit",
-    "notes": "similar to disable Privilege exec mode, exit goes down a command hierarchy level from both interface and global configuration modes",
+    "question": "Besides the show interface brief command, which command is the most popular show commad",
+    "answer": "show running-config",
+    "notes": "the show running-config command is a very popular command that shows the currently running configuration",
     "mastery": 0
   },
   {
@@ -246,6 +246,12 @@
     "mastery": 0
   },
   {
+    "question": "(command question) complete the command to show available argmuents after the pipe section of the command sh run |",
+    "answer": "sh run | ?",
+    "notes": "Similar to the normal IOS command line the question mark (?) allows you to view available commands",
+    "mastery": 0
+  },
+  {
     "question": "(command question)How would you save the routers current configuration using the copy command",
     "answer": "copy running-config startup-config",
     "notes": "To save the current configuration into the startup-config you could use the copy command under privilege exec mode to copy the running config into the startup config with this command",
@@ -258,51 +264,39 @@
     "mastery": 0
   },
   {
-    "question": "(command question) complete the command to show available argmuents after the pipe section of the command sh run |",
-    "answer": "sh run | ?",
-    "notes": "Similar to the normal IOS command line the question mark (?) allows you to view available commands",
-    "mastery": 0
-  },
-  {
     "question": "Command line interface for SECURELY connecting to the devices management IP address over the network",
     "answer": "SSH",
     "notes": "SSH is a secure way to connect to the command line interface over the network",
-    "mastery": 1
+    "mastery": 0
   },
   {
     "question": "When using Windows under Device Manager, what is the name of the port for the serial connection",
     "answer": "COM",
     "notes": "The COM port is used for the serical connections and used in PuTTY to connect the COM port # to the network device",
-    "mastery": 1
+    "mastery": 0
   },
   {
     "question": "UNSECURE way to connect to a network devices command line interface",
     "answer": "TELNET",
     "notes": "Telnet is supported but not reccomended",
-    "mastery": 1
+    "mastery": 0
   },
   {
     "question": "What is the name of the server that enforces secure logins through this centralized server",
     "answer": "AAA SERVER",
     "notes": "Enterprises will user (AAA) Authentication, Authorization, and Accounting server for secure login to network devices.",
-    "mastery": 1
+    "mastery": 0
   },
   {
     "question": "Name of popular client used to connect to network devices",
     "answer": "PUTTY",
     "notes": "PuTTY is a client used to connect to network devices over serial, Telnet, and SSH",
-    "mastery": 1
+    "mastery": 0
   },
   {
     "question": "Network device management question, What is the name for the network that all traffic goes through from a network engineer point of view",
     "answer": "PRODUCTION NETWORK",
     "notes": "The production network is the network path that non network devices use, network management could also use this type of network engineers may also use a completely different network for managing Network Devices",
-    "mastery": 1
-  },
-  {
-    "updatedAt": "2025-06-01T04:53:22.588Z"
-  },
-  {
-    "updatedAt": "2025-06-01T04:53:59.527Z"
+    "mastery": 0
   }
 ]
