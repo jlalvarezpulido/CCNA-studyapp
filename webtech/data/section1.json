@@ -42,12 +42,6 @@
     "mastery": 0
   },
   {
-    "question": "Console connection Troubleshooting: when connecting to a network device if connectin to the __ ____ does not work use the console cable",
-    "answer": "IP ADDRESS",
-    "notes": "If connecting using the IP address does not work try the console cable as a trouble shooting step",
-    "mastery": 0
-  },
-  {
     "question": "What connection method is used when setting up a new device without an IP address configured to it yet",
     "answer": "CONSOLE CABLE",
     "notes": "The console cable (typically DB9 to RJ45) is used for the initial configuration",
@@ -129,48 +123,6 @@
     "question": "What command takes you from Privilege mode into User mode",
     "answer": "DISABLE",
     "notes": "the Disable command allows you to exit privilege exec mode",
-    "mastery": 0
-  },
-  {
-    "question": "(mode question) Router>",
-    "answer": "USER EXEC",
-    "notes": "The device name followed by '>' signifies USER EXEC mode",
-    "mastery": 0
-  },
-  {
-    "question": "(command abbreviation)Router>en",
-    "answer": "ENABLE",
-    "notes": "en is shortened version of the ENABLE command",
-    "mastery": 0
-  },
-  {
-    "question": "the SHOW command is a part of this command hierarchy",
-    "answer": "PRIVILEGE EXEC",
-    "notes": "the show command is typically ran through the PRIVILEGE EXEC mode, it could be run in higher level command modes with the DO command 'DO SHOW'",
-    "mastery": 0
-  },
-  {
-    "question": "from PRIVILIGE EXEC what command will switch mode into a configure mode",
-    "answer": "CONFIGURE TERMINAL",
-    "notes": "The configure Terminal command, will enter the configuration mode from PRIVILIGE EXEC mode",
-    "mastery": 0
-  },
-  {
-    "question": "What is a shortened command for CONFIGURE TERMINAL",
-    "answer": "CONF T",
-    "notes": "conf t command is the shortened version for CONFIGURE TERMINAL",
-    "mastery": 0
-  },
-  {
-    "question": "Shortcut Question: Using command history which keyboard shortcut will take you to the start of the command to add commands at the start of the line:Answer format: Ctrl _",
-    "answer": "Ctrl A",
-    "notes": "Ctrl A allows you to go the start of the command to type from the beginning of the line",
-    "mastery": 0
-  },
-  {
-    "question": "Besides Ctrl C which command will leave from both global and interface configuration modes into privilege exec mode",
-    "answer": "end",
-    "notes": "While the exit command takes you back one level, the end command will leave configuration mode all together back into Privilege exec mode",
     "mastery": 0
   },
   {
@@ -298,5 +250,53 @@
     "answer": "PRODUCTION NETWORK",
     "notes": "The production network is the network path that non network devices use, network management could also use this type of network engineers may also use a completely different network for managing Network Devices",
     "mastery": 0
+  },
+  {
+    "question": "the SHOW command is a part of this command hierarchy",
+    "answer": "PRIVILEGE EXEC",
+    "notes": "the show command is typically ran through the PRIVILEGE EXEC mode, it could be run in higher level command modes with the DO command 'DO SHOW'",
+    "mastery": 0
+  },
+  {
+    "question": "from PRIVILIGE EXEC what command will switch mode into a configure mode",
+    "answer": "CONFIGURE TERMINAL",
+    "notes": "The configure Terminal command, will enter the configuration mode from PRIVILIGE EXEC mode",
+    "mastery": 1
+  },
+  {
+    "question": "What is a shortened command for CONFIGURE TERMINAL",
+    "answer": "CONF T",
+    "notes": "conf t command is the shortened version for CONFIGURE TERMINAL",
+    "mastery": 1
+  },
+  {
+    "question": "Shortcut Question: Using command history which keyboard shortcut will take you to the start of the command to add commands at the start of the line:Answer format: Ctrl _",
+    "answer": "Ctrl A",
+    "notes": "Ctrl A allows you to go the start of the command to type from the beginning of the line",
+    "mastery": 1
+  },
+  {
+    "question": "Console connection Troubleshooting: when connecting to a network device if connectin to the __ ____ does not work use the console cable",
+    "answer": "IP ADDRESS",
+    "notes": "If connecting using the IP address does not work try the console cable as a trouble shooting step",
+    "mastery": 1
+  },
+  {
+    "question": "(mode question) Router>",
+    "answer": "USER EXEC",
+    "notes": "The device name followed by '>' signifies USER EXEC mode",
+    "mastery": 1
+  },
+  {
+    "question": "(command abbreviation)Router>en",
+    "answer": "ENABLE",
+    "notes": "en is shortened version of the ENABLE command",
+    "mastery": 1
+  },
+  {
+    "question": "Besides Ctrl C which command will leave from both global and interface configuration modes into privilege exec mode",
+    "answer": "end",
+    "notes": "While the exit command takes you back one level, the end command will leave configuration mode all together back into Privilege exec mode",
+    "mastery": 1
   }
 ]

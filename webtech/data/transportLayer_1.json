@@ -1,23 +1,5 @@
 [
   {
-    "question": "Besides TCP which other popular L4 protocol is used",
-    "answer": "UDP",
-    "notes": "UDP and TCP are the 2 common L4 protocols",
-    "mastery": -1
-  },
-  {
-    "question": "What is a session?",
-    "answer": "active connection to a port",
-    "notes": "A host device can have multiple sessions to different servers, each session is the communication line to that server over a port, ports are often categorized by a defined service and protocol",
-    "mastery": -1
-  },
-  {
-    "question": "What's the protocol for port 25",
-    "answer": "smtp",
-    "notes": "SMTP stands for Simple Mail Transfer Protocol. It's the standard communication protocol used for sending and receiving email messages over the internet",
-    "mastery": 0
-  },
-  {
     "question": "What's the protocol for port 80",
     "answer": "http",
     "notes": "HTTP stands for Hypertext Transfer Protocol. It's the foundation of data communication on the World Wide Web, allowing web browsers and servers to exchange information",
@@ -108,18 +90,6 @@
     "mastery": 0
   },
   {
-    "question": "UDP port 161",
-    "answer": "SNMP",
-    "notes": "Simple Network Management Protocol, used for monitoring and managing network devices",
-    "mastery": 0
-  },
-  {
-    "question": "TCP/UDP port 53",
-    "answer": "DNS",
-    "notes": "Domain Name System, resolves domain names to IP addresses",
-    "mastery": 0
-  },
-  {
     "question": "FTP L4 protocol",
     "answer": "TCP",
     "notes": "Transport layer protocol used for reliable file transfers",
@@ -204,15 +174,27 @@
     "mastery": 0
   },
   {
+    "question": "Besides TCP which other popular L4 protocol is used",
+    "answer": "UDP",
+    "notes": "UDP and TCP are the 2 common L4 protocols",
+    "mastery": 0
+  },
+  {
+    "question": "What is a session?",
+    "answer": "active connection to a port",
+    "notes": "A host device can have multiple sessions to different servers, each session is the communication line to that server over a port, ports are often categorized by a defined service and protocol",
+    "mastery": 0
+  },
+  {
+    "question": "UDP port 161",
+    "answer": "SNMP",
+    "notes": "Simple Network Management Protocol, used for monitoring and managing network devices",
+    "mastery": 0
+  },
+  {
     "question": "TCP port 21",
     "answer": "FTP",
     "notes": "File Transfer Protocol, used for transferring files between computers",
-    "mastery": 1
-  },
-  {
-    "question": "What is the process of adjusting the flow of data from the sender to ensure that ther receiving host can handle all of it",
-    "answer": "flow control",
-    "notes": "Flow control ensures that the receiving host can handle all the traffic being sent to it, it does this by adjusting the flow of data",
     "mastery": 1
   },
   {
@@ -255,6 +237,24 @@
     "question": "The process by which a host is able to support multiple sessions simultaneously and manage traffic over a single link",
     "answer": "session multiplexing",
     "notes": "Session multiplexing allows the host to support many sessions at the same time and manage it all over a sinble data line",
+    "mastery": 1
+  },
+  {
+    "question": "What's the protocol for port 25",
+    "answer": "smtp",
+    "notes": "SMTP stands for Simple Mail Transfer Protocol. It's the standard communication protocol used for sending and receiving email messages over the internet",
+    "mastery": 1
+  },
+  {
+    "question": "What is the process of adjusting the flow of data from the sender to ensure that ther receiving host can handle all of it",
+    "answer": "flow control",
+    "notes": "Flow control ensures that the receiving host can handle all the traffic being sent to it, it does this by adjusting the flow of data",
+    "mastery": 2
+  },
+  {
+    "question": "TCP/UDP port 53",
+    "answer": "DNS",
+    "notes": "Domain Name System, resolves domain names to IP addresses",
     "mastery": 1
   }
 ]

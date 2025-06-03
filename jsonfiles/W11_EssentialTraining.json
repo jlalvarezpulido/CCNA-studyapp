@@ -1,0 +1,68 @@
+[
+    {
+        "question": "Besides zip and 7z files which other type of package file could windows 11 create",
+        "answer": "TAR",
+        "notes": "Windows 11 can natively create TAR files.TAR is short for tape archive and is commonly used in linux and unix systems",
+        "mastery": 0
+    },
+    {
+        "question": "Where can you find the quick settings panel, which includes thed wifi, bluetooth and other settings",
+        "answer": "bottom right task bar",
+        "notes": "Quick settings give you access to some of the computers most important settings",
+        "mastery": 0
+    },
+    {
+        "question": "What is the special processor included in copilot+PC's",
+        "answer": "NPU",
+        "notes": "NPU short for neural processing unit is a specialized chip designed to handle AI-intesive tasks. Ideal for real-time AI applications. (2025) currently using the Snapdragon X Elite chips",
+        "mastery": 0
+    },
+    {
+        "question": "Besides local Accounts what kind of accounts are used in Windows 11",
+        "answer": "Microsoft online account",
+        "notes": "MS online account allows for the use of online services, Email account, OneDrive and store access",
+        "mastery": 0
+    },
+    {
+        "question": "Is a commercial account, employer, school, or governement agency, a local account?",
+        "answer": "no",
+        "notes": "Commercial accounts are ms online accounts that have already been setup by the organization that assigns them.",
+        "mastery": 0
+    },
+    {
+        "question": "What name is used to connect to a computer over the network",
+        "answer": "device name",
+        "notes": "A computer's device name is used to connect to it over the network.Device names cannot include spaces or special characters.",
+        "mastery": 0
+    },
+    {
+        "question": "What is the name of the button next to the search bar in the task bar",
+        "answer": "Start button",
+        "notes": "The start button opens up the start menu which whill show a list of pinned applications by default, but may display all apps",
+        "mastery": 0
+    },
+    {
+        "question": "What is the name of the cluster of icons on the right side of the task bar",
+        "answer": "System tray",
+        "notes": "The system tray in Windows is the area on the right side of the taskbar where various icons display background applications, notifications, and system settings. You'll typically find icons for network status, volume control, battery life, and security updates.",
+        "mastery": 0
+    },
+    {
+        "question": "Where can you find the Settings Menu",
+        "answer": "Pinned in start menu",
+        "notes": "It may not always be pinned in the start menu. If it's not click on the 'all' button on the top right and scroll down to settings",
+        "mastery": 0
+    },
+    {
+        "question": "Which Category on the left side of the settings menu will contain the device name?",
+        "answer": "System",
+        "notes": "The system category will contain important information such as the device name, computer model and other important sub-menus like: Display, Sound, Notifications, and Storage",
+        "mastery": 0
+    },
+    {
+        "question": "",
+        "answer": "",
+        "notes": "",
+        "mastery": 0
+    }
+]
